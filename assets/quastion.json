@@ -367,7 +367,7 @@
               },
               {
                 "text": "B) 3",
-                "isCorrect": true
+                "isCorrect": false
               },
               {
                 "text": "C) 2",
@@ -375,7 +375,7 @@
               },
               {
                 "text": "D) -3",
-                "isCorrect": false
+                "isCorrect": true
               }
             ]
           },
@@ -450,23 +450,23 @@
           },
           {
             "question": "Aşakdaky berlen kwadrat üç agzada x-yň alyp biljek iň uly bahasyny tapyň",
-            "formula": "\\left\\{\\begin{cases}  n/2 \\  -(n+2)/2  \\end{cases}",
+            "formula": "30x-25x^2-4",
             "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
-                "text": "A) -10",
+                "text": "A) 0,6",
                 "isCorrect": true
               },
               {
-                "text": "B) -2",
+                "text": "B) 2",
                 "isCorrect": false
               },
               {
-                "text": "C) -5",
+                "text": "C) 0,5",
                 "isCorrect": false
               },
               {
-                "text": "D) -9",
+                "text": "D) 0,9",
                 "isCorrect": false
               }
             ]
@@ -546,7 +546,107 @@
                 "isCorrect": false
               }
             ]
-          },{
+          },
+          {
+            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
+            "formula": "",
+            "photo": "assets/for_tests/3_A3.jpg",
+            "choices": [
+              {
+                "text": "A) y=(x-3)^2",
+                "isCorrect": true
+              },
+              {
+                "text": "B) y=(x+3)^2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) y=x^2-3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) y=x^2+3",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },    
+    {
+      "task": {
+        "title": "y=ax^2 funksiýa we onun kesgitlemesi",
+        "tests": [
+          {
+            "question": "Asakdaky berlen grafikler kesişýan bolsalar , ähli kesişme koordinatorlaryny tapyň",
+            "formula": "y=-2x^2 we y=x",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) (0;0)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) kesişme nokaty ýok",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (0;0) we (-0,5'-0,5)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-0,5;-0,5)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen funksiýanyň grafigy haýsy çärekde ýerleşýar",
+            "formula": "y=-2x^2-5",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 1 we 2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3 we 4",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 1,2 we 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 2, 3 we 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
+            "formula": "",
+            "photo": "assets/for_tests/3_A3.jpg",
+            "choices": [
+              {
+                "text": "A) y=(x-3)^2",
+                "isCorrect": true
+              },
+              {
+                "text": "B) y=(x+3)^2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) y=x^2-3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) y=x^2+3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
             "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
             "formula": "",
             "photo": "assets/for_tests/3_A3.jpg",

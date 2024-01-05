@@ -55,9 +55,10 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    bool isLoading = widget.tests.isEmpty;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Lesson"),
+        title: const Text("hello"),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
@@ -74,59 +75,63 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                   key: signatureKey,
                 ),
               ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Spacer(),
-                Text('${currentQuestionIndex + 1}/${widget.tests.length}'),
-                const SizedBox(height: 20),
-                AppConfettiwidget(controllerCenter: _controllerCenter),
-                Text(
-                  widget.tests.isEmpty
-                      ? 'Sorular yükleniyor...'
-                      : widget.tests[currentQuestionIndex].question,
-                  style: const TextStyle(fontSize: 20.0),
-                ),
-                Math.tex(
-                  widget.tests.isEmpty
-                      ? 'Sorular yükleniyor...'
-                      : widget.tests[currentQuestionIndex].formula ?? "",
-                  textStyle: const TextStyle(fontSize: 20.0),
-                  mathStyle: MathStyle.text,
-                ),
-                const Spacer(),
-                Image.asset(
-                  widget.tests.isEmpty
-                      ? 'Sorular yükleniyor...'
-                      : widget.tests[currentQuestionIndex].photo ?? "",
-                ),
-                const Spacer(),
-                Column(children: [
-                  if (widget.tests.isEmpty)
-                    const Text('Sorular yükleniyor...')
-                  else
-                    ...List.generate(
-                      widget.tests[currentQuestionIndex].choices.length,
-                      (index) {
-                        final e =
-                            widget.tests[currentQuestionIndex].choices[index];
-                        return ListTile(
-                          contentPadding: const EdgeInsets.symmetric(
-                              vertical: 10, horizontal: 16),
-                          title: Math.tex(e.text),
-                          onTap: () {
-                            if (selectedChoiceIndex == -1) {
-                              checkAnswer(index);
-                            }
-                            _handler(e);
-                          },
-                          splashColor: e.isCorrect ? Colors.green : Colors.red,
-                        );
-                      },
-                    )
-                ]),
-              ],
-            )
+            if (isLoading)
+              const Center(child: CircularProgressIndicator.adaptive())
+            else
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Spacer(),
+                  Text('${currentQuestionIndex + 1}/${widget.tests.length}'),
+                  const SizedBox(height: 20),
+                  AppConfettiwidget(controllerCenter: _controllerCenter),
+                  Text(
+                    widget.tests.isEmpty
+                        ? 'Sorular yükleniyor...'
+                        : widget.tests[currentQuestionIndex].question,
+                    style: const TextStyle(fontSize: 20.0),
+                  ),
+                  Math.tex(
+                    widget.tests.isEmpty
+                        ? 'Sorular yükleniyor...'
+                        : widget.tests[currentQuestionIndex].formula ?? "",
+                    textStyle: const TextStyle(fontSize: 20.0),
+                    mathStyle: MathStyle.text,
+                  ),
+                  const Spacer(),
+                  Image.asset(
+                    widget.tests.isEmpty
+                        ? 'Sorular yükleniyor...'
+                        : widget.tests[currentQuestionIndex].photo ?? "",
+                  ),
+                  const Spacer(),
+                  Column(children: [
+                    if (widget.tests.isEmpty)
+                      const Text('Sorular yükleniyor...')
+                    else
+                      ...List.generate(
+                        widget.tests[currentQuestionIndex].choices.length,
+                        (index) {
+                          final e =
+                              widget.tests[currentQuestionIndex].choices[index];
+                          return ListTile(
+                            contentPadding: const EdgeInsets.symmetric(
+                                vertical: 10, horizontal: 16),
+                            title: Math.tex(e.text),
+                            onTap: () {
+                              if (selectedChoiceIndex == -1) {
+                                checkAnswer(index);
+                              }
+                              _handler(e);
+                            },
+                            splashColor:
+                                e.isCorrect ? Colors.green : Colors.red,
+                          );
+                        },
+                      )
+                  ]),
+                ],
+              )
           ],
         ),
       ),
