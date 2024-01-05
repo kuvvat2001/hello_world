@@ -115,8 +115,8 @@ class Test {
       );
 
   factory Test.fromJson(Map<String, dynamic> json) => Test(
-        photo: json["photo"],
         formula: json["formula"],
+        photo: json["photo"],
         question: json["question"],
         choices:
             List<Choice>.from(json["choices"].map((x) => Choice.fromJson(x))),
