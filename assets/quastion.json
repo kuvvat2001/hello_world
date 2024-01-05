@@ -1,0 +1,554 @@
+{
+  "data": [
+    {
+      "task": {
+        "title": "Funksiýalar we onuň kesgitlemesi",
+        "tests": [
+          {
+            "question": "Aşakdaky berlen funksiýanyň f(1) bolanda tapyň ?",
+            "formula": "f(x)=-x^2+2x+1",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A)-1",
+                "isCorrect": false
+              },
+              {
+                "text": "B)2",
+                "isCorrect": true
+              },
+              {
+                "text": "C)-3",
+                "isCorrect": false
+              },
+              {
+                "text": "D)0",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "f(x)=3x+2 funksaiya berlien. x-yn bahasyny tapyn hacanda f(x)=-1 bolanda",
+            "formula": "",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A)1",
+                "isCorrect": false
+              },
+              {
+                "text": "B)-\\frac{1}{3}",
+                "isCorrect": false
+              },
+              {
+                "text": "C)-1",
+                "isCorrect": true
+              },
+              {
+                "text": "D)\\frac{1}{3}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň.",
+            "formula": "f(x)=\\frac{x+1}{x-1}",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) (-\\infty;-1)\\cup(-1;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (-\\infty;1)\\cup(1;+\\infty)",
+                "isCorrect": true
+              },
+              {
+                "text": "C) (-1;1)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-\\infty;-1)\\cup(1;+\\infty)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "y=2x+6 berlen funksiyanyň x-yň ähli alyp biljek otrisaltel bahlaryny tapyň ",
+            "formula": "",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) (-3;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (-\\infty;-3)",
+                "isCorrect": true
+              },
+              {
+                "text": "C) (3;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (\\infty;3)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "  [–1; 1] aralykda bolan f(x)=3x+2 berlen. f funksiýanyň kesgitleniş ýaýlasyny tapyň.",
+            "formula": "",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) [-1;4]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) [-1;5]",
+                "isCorrect": true
+              },
+              {
+                "text": "C) [1;5]",
+                "isCorrect": false
+              },
+              {
+                "text": "D) [-1;1]",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen funksiýanyň nolyny tapyň (eger ol bar bolsa,y=0)",
+            "formula": "\\frac{(x^2+9)(x+5)}{x+3}?",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) -9",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -5",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "  [0; 2] aralykda bolan f(x)=3x-3 f berlen.Funksiýanyň kesgitleniş ýaýlasyny tapyň.",
+            "formula": "",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) [-3;1]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) [-3;3]",
+                "isCorrect": true
+              },
+              {
+                "text": "C) [-3;6]",
+                "isCorrect": false
+              },
+              {
+                "text": "D) [-2;3]",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň",
+            "formula": "\\frac{x-1}{x+2}?",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) (-\\infty;-2)\\cup(-2;+\\infty)",
+                "isCorrect": true
+              },
+              {
+                "text": "B) (-\\infty;1)\\cup(1;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-2;1)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-\\infty;-2)\\cup(1;+\\infty)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň",
+            "formula": "\\frac{x+1}{x^2+1}?",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) (1;+\\infty;)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (-\\infty;-1)\\cup(1;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-1;1)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-\\infty;+\\infty)",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Berlen funksiýanyň nolyny tapyň (eger ol bar bolsa,y=0)",
+            "formula": "\\frac{x-1}{(x-3)(x^2+4)}?",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": true
+              },
+              {
+                "text": "B) -1",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Kwadrat üç agza",
+        "tests": [
+          {
+            "question": " Aşakdaky berlen kwadrat üç agzanyň näçe sany köki bar",
+            "formula": "-x^2+6x-12",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 0",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": " Aşakdaky berlen kwadrat üç agzanyň köpeldijilere dagadyň",
+            "formula": "-2x^2-3x+2",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) -2(x+0,5)(x+2)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 2(0,5-x)(x-2)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (1-2x)(x+2)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (1-2x)(x-2)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " Aşakdakylaryň haýsysy berlen kwadrat üç agzanyň kökleri",
+            "formula": "x^2-2x-2",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) \\sqrt{7}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 1+\\sqrt{3}",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 1-\\sqrt{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " Aşakdaky berlen haýasy kwadrat üç agza dine otrisatel bahalary alýar ",
+            "formula": "",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) x^2+8x+14",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 12x-x^2-34",
+                "isCorrect": false
+              },
+              {
+                "text": "C) x^2-10x+24",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 8x-x^2-16",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen kwadrat üç agzada x-yň alyp biljek iň uly bahasyny tapyň",
+            "formula": "10x-4x^2-8",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 1,15",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 1,25",
+                "isCorrect": true
+              },
+              {
+                "text": "D) -1,25",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen kwadrat üç agzanyň iň kiçi bahasyny tapyň",
+            "formula": "x^2-2x-2",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen droby gysgaldyň",
+            "formula": "\\frac{a^2-7a+6}{a^2-1}",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) \\frac{a+6}{a-1}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\frac{a-6}{a-1}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\frac{a-6}{a+1}",
+                "isCorrect": true
+              },
+              {
+                "text": "D) \\frac{a-1}{a+1}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen köpagzanyň iň uly bahasyny tapyň",
+            "formula": "2b\\sqrt{6}-b^2-1",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 5",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen köpagzanyň iň kiçi bahasyny tapyň",
+            "formula": "c^2-2c\\sqrt{10}+7",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) -4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 5",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -3",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen kwadrat üç agzada x-yň alyp biljek iň uly bahasyny tapyň",
+            "formula": "\\left\\{\\begin{cases}  n/2 \\  -(n+2)/2  \\end{cases}",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) -10",
+                "isCorrect": true
+              },
+              {
+                "text": "B) -2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -5",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -9",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "y=ax^2 funksiýa we onun kesgitlemesi",
+        "tests": [
+          {
+            "question": "Asakdaky berlen grafikler kesişýan bolsalar , ähli kesişme koordinatorlaryny tapyň",
+            "formula": "y=-2x^2 we y=x",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) (0;0)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) kesişme nokaty ýok",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (0;0) we (-0,5'-0,5)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-0,5;-0,5)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen funksiýanyň grafigy haýsy çärekde ýerleşýar",
+            "formula": "y=-2x^2-5",
+            "photo": "assets/for_tests/for_null.png",
+            "choices": [
+              {
+                "text": "A) 1 we 2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3 we 4",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 1,2 we 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 2, 3 we 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
+            "formula": "",
+            "photo": "assets/for_tests/3_A3.jpg",
+            "choices": [
+              {
+                "text": "A) y=(x-3)^2",
+                "isCorrect": true
+              },
+              {
+                "text": "B) y=(x+3)^2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) y=x^2-3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) y=x^2+3",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}
