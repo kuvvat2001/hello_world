@@ -546,6 +546,28 @@
                 "isCorrect": false
               }
             ]
+          },{
+            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
+            "formula": "",
+            "photo": "assets/for_tests/3_A3.jpg",
+            "choices": [
+              {
+                "text": "A) y=(x-3)^2",
+                "isCorrect": true
+              },
+              {
+                "text": "B) y=(x+3)^2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) y=x^2-3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) y=x^2+3",
+                "isCorrect": false
+              }
+            ]
           }
         ]
       }
