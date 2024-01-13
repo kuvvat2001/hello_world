@@ -99,15 +99,11 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                     mathStyle: MathStyle.text,
                   ),
                   const Spacer(),
-                  Column(
-                    children: [
-                      Image.asset(
-                        widget.tests.isEmpty
-                            ? 'Sorular yükleniyor...'
-                            : widget.tests[currentQuestionIndex].photo ?? "",
-                            fit: BoxFit.contain,
-                      ),
-                    ],
+                  Image.asset(
+                    widget.tests.isEmpty
+                        ? 'Sorular yükleniyor...'
+                        : widget.tests[currentQuestionIndex].photo ?? "",
+                        fit: BoxFit.contain,
                   ),
                   const Spacer(),
                   Column(children: [
