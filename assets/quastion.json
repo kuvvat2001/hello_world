@@ -53,7 +53,7 @@
           {
             "question": "Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň.",
             "formula": "f(x)=\\frac{x+1}{x-1}",
-            "photo": "assets/for_tests/for_null.png",
+            "photo": "assets/for_tests/3_A3.jpg",
             "choices": [
               {
                 "text": "A) (-\\infty;-1)\\cup(-1;+\\infty)",
