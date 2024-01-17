@@ -132,7 +132,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                       )
                   ]),
                 ],
-              )
+              ) 
           ],
         ),
       ),
