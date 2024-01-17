@@ -79,7 +79,12 @@ class _LessonsItem extends StatelessWidget {
             context: context, widget: EquationTestsScreen(tests: task.tests)),
         1 => _route(
             context: context, widget: EquationTestsScreen(tests: task.tests)),
-        _ => _route(context: context, widget: const SizedBox())
+        _ => _route(
+            context: context,
+            widget: Scaffold(
+              appBar: AppBar(),
+              body: Center(child: Text(task.title)),
+            ))
       };
 
   Future<T?> _route<T>(

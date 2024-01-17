@@ -7,7 +7,6 @@
           {
             "question": "Aşakdaky berlen funksiýanyň f(1) bolanda tapyň ?",
             "formula": "f(x)=-x^2+2x+1",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A)-1",
@@ -30,7 +29,6 @@
           {
             "question": "f(x)=3x+2 funksaiya berlien. x-yn bahasyny tapyn hacanda f(x)=-1 bolanda",
             "formula": "",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A)1",
@@ -76,7 +74,6 @@
           {
             "question": "y=2x+6 berlen funksiyanyň x-yň ähli alyp biljek otrisaltel bahlaryny tapyň ",
             "formula": "",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) (-3;+\\infty)",
@@ -97,9 +94,8 @@
             ]
           },
           {
-            "question": "  [–1; 1] aralykda bolan f(x)=3x+2 berlen. f funksiýanyň kesgitleniş ýaýlasyny tapyň.",
+            "question": "  [-1; 1] aralykda bolan f(x)=3x+2 berlen. f funksiýanyň kesgitleniş ýaýlasyny tapyň.",
             "formula": "",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) [-1;4]",
@@ -122,7 +118,6 @@
           {
             "question": "Berlen funksiýanyň nolyny tapyň (eger ol bar bolsa,y=0)",
             "formula": "\\frac{(x^2+9)(x+5)}{x+3}?",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) -9",
@@ -145,7 +140,6 @@
           {
             "question": "  [0; 2] aralykda bolan f(x)=3x-3 f berlen.Funksiýanyň kesgitleniş ýaýlasyny tapyň.",
             "formula": "",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) [-3;1]",
@@ -168,7 +162,6 @@
           {
             "question": " Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň",
             "formula": "\\frac{x-1}{x+2}?",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) (-\\infty;-2)\\cup(-2;+\\infty)",
@@ -572,7 +565,7 @@
           }
         ]
       }
-    },    
+    },
     {
       "task": {
         "title": "y=ax^2 funksiýa we onun kesgitlemesi",

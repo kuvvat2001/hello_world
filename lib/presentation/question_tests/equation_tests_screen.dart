@@ -90,7 +90,9 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                         ? 'Sorular yükleniyor...'
                         : widget.tests[currentQuestionIndex].question,
                     style: const TextStyle(fontSize: 20.0),
+                    textAlign: TextAlign.center,
                   ),
+                  const SizedBox(height: 10),
                   Math.tex(
                     widget.tests.isEmpty
                         ? 'Sorular yükleniyor...'
@@ -99,12 +101,14 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                     mathStyle: MathStyle.text,
                   ),
                   const Spacer(),
-                  Image.asset(
-                    widget.tests.isEmpty
-                        ? 'Sorular yükleniyor...'
-                        : widget.tests[currentQuestionIndex].photo ?? "",
-                        fit: BoxFit.contain,
-                  ),
+                  if (widget.tests[currentQuestionIndex].photo != null)
+                    Image.asset(
+                      widget.tests.isEmpty
+                          ? 'Sorular yükleniyor...'
+                          : widget.tests[currentQuestionIndex].photo ?? "",
+                      height: 200,
+                      fit: BoxFit.contain,
+                    ),
                   const Spacer(),
                   Column(children: [
                     if (widget.tests.isEmpty)
@@ -119,12 +123,14 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                             contentPadding: const EdgeInsets.symmetric(
                                 vertical: 10, horizontal: 16),
                             title: Math.tex(e.text),
-                            onTap: () {
-                              if (selectedChoiceIndex == -1) {
-                                checkAnswer(index);
-                              }
-                              _handler(e);
-                            },
+                            onTap: isWritingBoardOpen
+                                ? null
+                                : () {
+                                    if (selectedChoiceIndex == -1) {
+                                      checkAnswer(index);
+                                    }
+                                    _handler(e);
+                                  },
                             splashColor:
                                 e.isCorrect ? Colors.green : Colors.red,
                           );
@@ -132,7 +138,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                       )
                   ]),
                 ],
-              ) 
+              )
           ],
         ),
       ),
