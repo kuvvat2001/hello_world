@@ -58,7 +58,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
     bool isLoading = widget.tests.isEmpty;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("hello"),
+        title: const Text(""),
         backgroundColor: Colors.blue,
       ),
       body: Padding(
@@ -170,7 +170,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       showCupertinoModalPopup<void>(
         context: context,
         builder: (BuildContext context) => CupertinoActionSheet(
-          title: const Text('Well done'),
+          title: const Text('Gutlaýaryn'),
           message: Text(msg),
           actions: <CupertinoActionSheetAction>[
             CupertinoActionSheetAction(
@@ -179,7 +179,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                 Navigator.pop(context);
                 Navigator.pop(context);
               },
-              child: const Text('Back'),
+              child: const Text('Yza çyk'),
             ),
           ],
         ),

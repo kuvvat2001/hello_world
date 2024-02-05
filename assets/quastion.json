@@ -51,7 +51,6 @@
           {
             "question": "Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň.",
             "formula": "f(x)=\\frac{x+1}{x-1}",
-            "photo": "assets/for_tests/3_A3.jpg",
             "choices": [
               {
                 "text": "A) (-\\infty;-1)\\cup(-1;+\\infty)",
@@ -184,7 +183,6 @@
           {
             "question": " Aşakdaky funksiýanyň bahalar ýaýlasyny tapyň",
             "formula": "\\frac{x+1}{x^2+1}?",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) (1;+\\infty;)",
@@ -207,7 +205,6 @@
           {
             "question": "Berlen funksiýanyň nolyny tapyň (eger ol bar bolsa,y=0)",
             "formula": "\\frac{x-1}{(x-3)(x^2+4)}?",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) 1",
@@ -237,7 +234,6 @@
           {
             "question": " Aşakdaky berlen kwadrat üç agzanyň näçe sany köki bar",
             "formula": "-x^2+6x-12",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) 1",
@@ -260,7 +256,6 @@
           {
             "question": " Aşakdaky berlen kwadrat üç agzanyň köpeldijilere dagadyň",
             "formula": "-2x^2-3x+2",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) -2(x+0,5)(x+2)",
@@ -283,7 +278,6 @@
           {
             "question": " Aşakdakylaryň haýsysy berlen kwadrat üç agzanyň kökleri",
             "formula": "x^2-2x-2",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) \\sqrt{7}",
@@ -306,7 +300,6 @@
           {
             "question": " Aşakdaky berlen haýasy kwadrat üç agza dine otrisatel bahalary alýar ",
             "formula": "",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) x^2+8x+14",
@@ -329,7 +322,6 @@
           {
             "question": "Aşakdaky berlen kwadrat üç agzada x-yň alyp biljek iň uly bahasyny tapyň",
             "formula": "10x-4x^2-8",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) 1,15",
@@ -352,7 +344,6 @@
           {
             "question": "Aşakdaky berlen kwadrat üç agzanyň iň kiçi bahasyny tapyň",
             "formula": "x^2-2x-2",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) 1",
@@ -375,7 +366,6 @@
           {
             "question": "Aşakdaky berlen droby gysgaldyň",
             "formula": "\\frac{a^2-7a+6}{a^2-1}",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) \\frac{a+6}{a-1}",
@@ -398,7 +388,6 @@
           {
             "question": "Aşakdaky berlen köpagzanyň iň uly bahasyny tapyň",
             "formula": "2b\\sqrt{6}-b^2-1",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) 4",
@@ -421,7 +410,6 @@
           {
             "question": "Aşakdaky berlen köpagzanyň iň kiçi bahasyny tapyň",
             "formula": "c^2-2c\\sqrt{10}+7",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) -4",
@@ -444,7 +432,6 @@
           {
             "question": "Aşakdaky berlen kwadrat üç agzada x-yň alyp biljek iň uly bahasyny tapyň",
             "formula": "30x-25x^2-4",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
                 "text": "A) 0,6",
@@ -473,19 +460,18 @@
         "tests": [
           {
             "question": "Asakdaky berlen grafikler kesişýan bolsalar , ähli kesişme koordinatorlaryny tapyň",
-            "formula": "y=-2x^2 we y=x",
-            "photo": "assets/for_tests/for_null.png",
+            "formula": "y=-2x^2 \\ we \\ y=x",
             "choices": [
               {
                 "text": "A) (0;0)",
                 "isCorrect": false
               },
               {
-                "text": "B) kesişme nokaty ýok",
+                "text": "B) kesisme \\ nokaty \\ yok",
                 "isCorrect": false
               },
               {
-                "text": "C) (0;0) we (-0,5'-0,5)",
+                "text": "C) (0;0) \\ we \\ (-0,5;-0,5)",
                 "isCorrect": true
               },
               {
@@ -497,22 +483,21 @@
           {
             "question": "Aşakdaky berlen funksiýanyň grafigy haýsy çärekde ýerleşýar",
             "formula": "y=-2x^2-5",
-            "photo": "assets/for_tests/for_null.png",
             "choices": [
               {
-                "text": "A) 1 we 2",
+                "text": "A) 1 \\ we \\ 2",
                 "isCorrect": false
               },
               {
-                "text": "B) 3 we 4",
+                "text": "B) 3 \\ we \\ 4",
                 "isCorrect": true
               },
               {
-                "text": "C) 1,2 we 3",
+                "text": "C) 1,2 \\ we \\ 3",
                 "isCorrect": false
               },
               {
-                "text": "D) 2, 3 we 4",
+                "text": "D) 2, 3 \\ we \\ 4",
                 "isCorrect": false
               }
             ]
@@ -541,24 +526,156 @@
             ]
           },
           {
-            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
-            "formula": "",
-            "photo": "assets/for_tests/3_A3.jpg",
+            "question": "Aşakdaky berlen funksiýanyň artýan aralygyny tapyň?",
+            "formula": "y=-x^2+x+1",
             "choices": [
               {
-                "text": "A) y=(x-3)^2",
+                "text": "A)(-\\infty;0,5]",
                 "isCorrect": true
               },
               {
-                "text": "B) y=(x+3)^2",
+                "text": "B)[-0,5;\\infty)",
                 "isCorrect": false
               },
               {
-                "text": "C) y=x^2-3",
+                "text": "C) [-0,5;0,5]",
                 "isCorrect": false
               },
               {
-                "text": "D) y=x^2+3",
+                "text": "D) [0,5;\\infty]",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen funksiýalaryň grafikleriniň kesişýän nokatlarynyň abssisasyny tapyň?",
+            "formula": "y=x^2 \\ we \\ y=6-x",
+            "choices": [
+              {
+                "text": "A) -2 \\ we \\ 3 ",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -3 \\ we \\ 2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2 \\ we \\ 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -2 \\ we \\ -3 ",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen parablanyň depesini tapyň (abssissa (x=?))?",
+            "formula": "y=x^2+2x+6",
+            "choices": [
+              {
+                "text": "A) -2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -3",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -1",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen funksiýanyň nolyny tapyň?",
+            "formula": "y=x^2-2|x|-15",
+            "choices": [
+              {
+                "text": "A) \\pm 2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 5",
+                "isCorrect": true
+              },
+              {
+                "text": "C) \\pm 6",
+                "isCorrect": true
+              },
+              {
+                "text": "D) \\pm 3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen funksýanyň grafygyny görkeziň",
+            "formula": "",
+            "photo": "assets/for_tests/3_3A3.jpg",
+            "choices": [
+              {
+                "text": "A) y=(x-1)^2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) x^2-1",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (x+1)^2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) x^2+1",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen funksýanyň nolyny tapyň",
+            "formula": "y=x^2-2|x|-8",
+            "choices": [
+              {
+                "text": "A)\\pm 2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 4",
+                "isCorrect": true
+              },
+              {
+                "text": "C) -4",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen funksiýanyň kemelýan aralygyny tapyň",
+            "formula": "y=x^2-x+12",
+            "choices": [
+              {
+                "text": "A)(-\\infty;0,5]",
+                "isCorrect": true
+              },
+              {
+                "text": "B)[-0,5;\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) [-0,5;0,5]",
+                "isCorrect": false
+              },
+              {
+                "text": "D) [0,5;\\infty]",
                 "isCorrect": false
               }
             ]
@@ -568,96 +685,678 @@
     },
     {
       "task": {
-        "title": "y=ax^2 funksiýa we onun kesgitlemesi",
+        "title": "Bir näbellili çyzykly deňsizlikler",
         "tests": [
           {
-            "question": "Asakdaky berlen grafikler kesişýan bolsalar , ähli kesişme koordinatorlaryny tapyň",
-            "formula": "y=-2x^2 we y=x",
-            "photo": "assets/for_tests/for_null.png",
+            "question": "Berilen deňsizligi çözüň",
+            "formula": "x^2-2x-8\\leq 0",
             "choices": [
               {
-                "text": "A) (0;0)",
+                "text": "A) (-\\infty;-2]\\cup[4;+\\infty)",
                 "isCorrect": false
               },
               {
-                "text": "B) kesişme nokaty ýok",
+                "text": "B) (-\\infty;-2)\\cup(4;+\\infty)",
                 "isCorrect": false
               },
               {
-                "text": "C) (0;0) we (-0,5'-0,5)",
+                "text": "C) (-2;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) [-2;4]",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": " Deňsizligiň çözüwler köplügini tapyň",
+            "formula": "x^2>81",
+            "choices": [
+              {
+                "text": "A) (-\\infty;-9]\\cup[9;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (-\\infty;-9)\\cup(9;+\\infty)",
                 "isCorrect": true
               },
               {
-                "text": "D) (-0,5;-0,5)",
+                "text": "C) (-9;9)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) [-9;9]",
                 "isCorrect": false
               }
             ]
           },
           {
-            "question": "Aşakdaky berlen funksiýanyň grafigy haýsy çärekde ýerleşýar",
-            "formula": "y=-2x^2-5",
-            "photo": "assets/for_tests/for_null.png",
+            "question": "t - niň haýsy bahasynda aşakdaky deňlemäniň kökleri ýok",
+            "formula": "x^2-2x+t=0",
             "choices": [
               {
-                "text": "A) 1 we 2",
-                "isCorrect": false
-              },
-              {
-                "text": "B) 3 we 4",
+                "text": "A) t>1",
                 "isCorrect": true
               },
               {
-                "text": "C) 1,2 we 3",
+                "text": "B) t<1",
                 "isCorrect": false
               },
               {
-                "text": "D) 2, 3 we 4",
+                "text": "C) t\\geq 1",
+                "isCorrect": false
+              },
+              {
+                "text": "D) t\\leq 1",
                 "isCorrect": false
               }
             ]
           },
           {
-            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
+            "question": "Funksiýanyň kesgitleniş ýaýlasyny tapyň",
+            "formula": "f(x)=\\sqrt{x^2-2x}",
+            "choices": [
+              {
+                "text": "A) [0;2]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (0;2)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-\\infty;0]\\cup[2;+\\infty)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-\\infty;0)\\cup(2;+\\infty)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Deňsizligi çözüň",
+            "formula": "(x-2)(3-x)(x+1)\\geq 0",
+            "choices": [
+              {
+                "text": "A) [-\\infty;-1]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (2;3)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-\\infty;-1]\\cup(2;3)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-\\infty;-1]\\cup[2;3]",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Deňsizligi çözuň",
+            "formula": "\\frac{2-x}{x+1}\\geq 1",
+            "choices": [
+              {
+                "text": "A) [-\\infty;-1]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (-1;0,5)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-\\infty;-1)\\cup[0,5;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-1;0,5]",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Haçanda aşakdaky aňlatma otrisatel bolanda berlen x-iň alyp biljek iň uly bitin bahasyny tapyň ",
+            "formula": "\\frac{5x^2+80}{x^2-9x+8}",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 7",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 8",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 9",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Haçanda aşakdaky aňlatma položitel bolanda berlen x-iň alyp biljek iň kiçi bitin bahasyny tapyň ",
+            "formula": "\\frac{x^2+25}{x^2-9x+8}",
+            "choices": [
+              {
+                "text": "A) 5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 7",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 8",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 9",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Aňlatmanyň kesgitleniş ýaýlasyny tapyň",
+            "formula": "f(x)=\\frac{1}{\\sqrt{x^2-2x}}",
+            "choices": [
+              {
+                "text": "A) [0;2]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (0;2)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-\\infty;0]\\cup[2;+\\infty)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-\\infty;0)\\cup(2;+\\infty)",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "t - niň haýsy bahasynda aşakdaky deňlemäniň kökleri ýok",
+            "formula": "25x^2+tx+1=0",
+            "choices": [
+              {
+                "text": "A) t\\in [-10;10]",
+                "isCorrect": false
+              },
+              {
+                "text": "B) t\\in (-10;10)",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 10",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -10",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Iki näbelili deňlemeleri grafik usuly bilen çözmek",
+        "tests": [
+          {
+            "question": "Aşakdakylaryň haýsysy berlen deňlemäniň çözüwi",
+            "formula": "(x-2)^2+y^2=25",
+            "choices": [
+              {
+                "text": "A) (x;y)=(5;3)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (x;y)=(5;-4)",
+                "isCorrect": true
+              },
+              {
+                "text": "C) (x;y)=(-3;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (x;y)=(-3;-4)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdakylaryň haýsysy berlen sistemanyň çözüwi?",
+            "formula": "\\begin{cases} (x-2)^2-y &=5 \\\\ xy &= -4 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) (-1;-4)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (3;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (1;-4)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-4;1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Suratda deňlemeleriň grafigi görkezilen.Aşakdaky sistemalaryň haýsysy gabat gelýär?",
             "formula": "",
-            "photo": "assets/for_tests/3_A3.jpg",
             "choices": [
               {
-                "text": "A) y=(x-3)^2",
+                "text": "A) -0,25 \\ we \\ 0,025",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -0,25 \\ we \\ 0,125",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 0,25 \\ we \\ -0,025",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 0,25 \\ we \\ -0,125",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "(x^2+3)^2-8(x^2+3)+7=0",
+            "choices": [
+              {
+                "text": "A) \\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 2",
                 "isCorrect": true
               },
               {
-                "text": "B) y=(x+3)^2",
+                "text": "C) -4",
                 "isCorrect": false
               },
               {
-                "text": "C) y=x^2-3",
-                "isCorrect": false
-              },
-              {
-                "text": "D) y=x^2+3",
+                "text": "D) \\pm 1",
                 "isCorrect": false
               }
             ]
           },
           {
-            "question": "Aşakdakykylaryň haýsysy görkezilen grafiga degişli?",
-            "formula": "",
-            "photo": "assets/for_tests/3_A3.jpg",
+            "question": "Deňsizligi çözüň",
+            "formula": "x^2+6-5x^3-30x=0",
             "choices": [
               {
-                "text": "A) y=(x-3)^2",
+                "text": "A) 0,5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 0,2",
                 "isCorrect": true
               },
               {
-                "text": "B) y=(x+3)^2",
+                "text": "C) 0,3",
                 "isCorrect": false
               },
               {
-                "text": "C) y=x^2-3",
+                "text": "D) -0,2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky deňlemede m-iň haýsy bahasynda deňlemäniň diňe iki aýry köki bar?",
+            "formula": "x^4-8x^2+m^2=0",
+            "choices": [
+              {
+                "text": "A) m=4",
                 "isCorrect": false
               },
               {
-                "text": "D) y=x^2+3",
+                "text": "B) m=2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) m=\\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "D) m=\\pm 2",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "(x^2+4)^2-7(x^2+4)+10=0",
+            "choices": [
+              {
+                "text": "A) \\pm 1",
+                "isCorrect": true
+              },
+              {
+                "text": "B) \\pm 2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\pm 3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky deňlemede m-iň haýsy bahasynda deňlemäniň diňe iki aýry köki bar?",
+            "formula": "x^4-4x^2+m^2=0",
+            "choices": [
+              {
+                "text": "A) \\pm 5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\pm 1",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\pm 2",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "2x^3-x^2+2x-1=0",
+            "choices": [
+              {
+                "text": "A) 0,2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 0,5",
+                "isCorrect": true
+              },
+              {
+                "text": "C) -0,2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -0,5",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "x^3-x+6=0",
+            "choices": [
+              {
+                "text": "A) -1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 3",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Bir näbellili çyzykly deňlemeler",
+        "tests": [
+          {
+            "question": "Aşakdaky berlen deňleme näçinji derejeli deňleme?",
+            "formula": "(x^2-1)^3+5x^2=x^6-4x^5",
+            "choices": [
+              {
+                "text": "A) 5",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 6",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky deňlemede t-niň haýsy bahalarynda deňlemaniň iki köki bar?",
+            "formula": "5x^2-10x+t=0",
+            "choices": [
+              {
+                "text": "A) t<20",
+                "isCorrect": false
+              },
+              {
+                "text": "B) t<5",
+                "isCorrect": true
+              },
+              {
+                "text": "C) t>0",
+                "isCorrect": false
+              },
+              {
+                "text": "D) t>-5",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "\\dfrac{4x+(1-2x^2)(2x^2+1)}{4}=8x^2-x^4",
+            "choices": [
+              {
+                "text": "A) -0,25 \\ we \\ 0,025",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -0,25 \\ we \\ 0,125",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 0,25 \\ we \\ -0,025",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 0,25 \\ we \\ -0,125",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "(x^2+3)^2-8(x^2+3)+7=0",
+            "choices": [
+              {
+                "text": "A) \\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) -4",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\pm 1",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Deňsizligi çözüň",
+            "formula": "x^2+6-5x^3-30x=0",
+            "choices": [
+              {
+                "text": "A) 0,5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 0,2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 0,3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -0,2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky deňlemede m-iň haýsy bahasynda deňlemäniň diňe iki aýry köki bar?",
+            "formula": "x^4-8x^2+m^2=0",
+            "choices": [
+              {
+                "text": "A) m=4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) m=2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) m=\\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "D) m=\\pm 2",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "(x^2+4)^2-7(x^2+4)+10=0",
+            "choices": [
+              {
+                "text": "A) \\pm 1",
+                "isCorrect": true
+              },
+              {
+                "text": "B) \\pm 2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\pm 3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky deňlemede m-iň haýsy bahasynda deňlemäniň diňe iki aýry köki bar?",
+            "formula": "x^4-4x^2+m^2=0",
+            "choices": [
+              {
+                "text": "A) \\pm 5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 4",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\pm 1",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\pm 2",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "2x^3-x^2+2x-1=0",
+            "choices": [
+              {
+                "text": "A) 0,2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 0,5",
+                "isCorrect": true
+              },
+              {
+                "text": "C) -0,2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -0,5",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Deňlemäni çözüň",
+            "formula": "x^3-x+6=0",
+            "choices": [
+              {
+                "text": "A) -1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 3",
                 "isCorrect": false
               }
             ]

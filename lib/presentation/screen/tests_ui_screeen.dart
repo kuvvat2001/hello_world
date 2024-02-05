@@ -6,8 +6,11 @@ import 'package:math_app/domain/repository/repository.dart';
 import 'package:math_app/presentation/question_tests/equation_tests_screen.dart';
 
 class TestsUiScreen extends StatefulWidget {
-  const TestsUiScreen(
-      {super.key, required this.repository, required this.title});
+  const TestsUiScreen({
+    super.key,
+    required this.repository,
+    required this.title,
+  });
   final IRepository repository;
   final String title;
 
@@ -78,6 +81,18 @@ class _LessonsItem extends StatelessWidget {
         0 => _route(
             context: context, widget: EquationTestsScreen(tests: task.tests)),
         1 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        2 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        3 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        4 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        5 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        6 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        7 => _route(
             context: context, widget: EquationTestsScreen(tests: task.tests)),
         _ => _route(
             context: context,

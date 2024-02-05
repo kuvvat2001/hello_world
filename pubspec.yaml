@@ -81,6 +81,7 @@ flutter:
     - assets/photo/math.jpg
     - assets/icon/icon.png
     - assets/for_tests/3_A3.jpg
+    - assets/for_tests/3_3A3.jpg
     - assets/for_tests/for_null.png
   #   - images/a_dot_burr.jpeg
   #   - images/a_dot_ham.jpeg
