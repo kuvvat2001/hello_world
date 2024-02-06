@@ -912,233 +912,6 @@
     },
     {
       "task": {
-        "title": "Iki näbelili deňlemeleri grafik usuly bilen çözmek",
-        "tests": [
-          {
-            "question": "Aşakdakylaryň haýsysy berlen deňlemäniň çözüwi",
-            "formula": "(x-2)^2+y^2=25",
-            "choices": [
-              {
-                "text": "A) (x;y)=(5;3)",
-                "isCorrect": false
-              },
-              {
-                "text": "B) (x;y)=(5;-4)",
-                "isCorrect": true
-              },
-              {
-                "text": "C) (x;y)=(-3;4)",
-                "isCorrect": false
-              },
-              {
-                "text": "D) (x;y)=(-3;-4)",
-                "isCorrect": false
-              }
-            ]
-          },
-          {
-            "question": "Aşakdakylaryň haýsysy berlen sistemanyň çözüwi?",
-            "formula": "\\begin{cases} (x-2)^2-y &=5 \\\\ xy &= -4 \\end{cases}",
-            "choices": [
-              {
-                "text": "A) (-1;-4)",
-                "isCorrect": false
-              },
-              {
-                "text": "B) (3;4)",
-                "isCorrect": false
-              },
-              {
-                "text": "C) (1;-4)",
-                "isCorrect": true
-              },
-              {
-                "text": "D) (-4;1)",
-                "isCorrect": false
-              }
-            ]
-          },
-          {
-            "question": "Suratda deňlemeleriň grafigi görkezilen.Aşakdaky sistemalaryň haýsysy gabat gelýär?",
-            "formula": "",
-            "choices": [
-              {
-                "text": "A) -0,25 \\ we \\ 0,025",
-                "isCorrect": false
-              },
-              {
-                "text": "B) -0,25 \\ we \\ 0,125",
-                "isCorrect": false
-              },
-              {
-                "text": "C) 0,25 \\ we \\ -0,025",
-                "isCorrect": false
-              },
-              {
-                "text": "D) 0,25 \\ we \\ -0,125",
-                "isCorrect": true
-              }
-            ]
-          },
-          {
-            "question": "Deňlemäni çözüň",
-            "formula": "(x^2+3)^2-8(x^2+3)+7=0",
-            "choices": [
-              {
-                "text": "A) \\pm 4",
-                "isCorrect": false
-              },
-              {
-                "text": "B) \\pm 2",
-                "isCorrect": true
-              },
-              {
-                "text": "C) -4",
-                "isCorrect": false
-              },
-              {
-                "text": "D) \\pm 1",
-                "isCorrect": false
-              }
-            ]
-          },
-          {
-            "question": "Deňsizligi çözüň",
-            "formula": "x^2+6-5x^3-30x=0",
-            "choices": [
-              {
-                "text": "A) 0,5",
-                "isCorrect": false
-              },
-              {
-                "text": "B) 0,2",
-                "isCorrect": true
-              },
-              {
-                "text": "C) 0,3",
-                "isCorrect": false
-              },
-              {
-                "text": "D) -0,2",
-                "isCorrect": false
-              }
-            ]
-          },
-          {
-            "question": "Aşakdaky deňlemede m-iň haýsy bahasynda deňlemäniň diňe iki aýry köki bar?",
-            "formula": "x^4-8x^2+m^2=0",
-            "choices": [
-              {
-                "text": "A) m=4",
-                "isCorrect": false
-              },
-              {
-                "text": "B) m=2",
-                "isCorrect": false
-              },
-              {
-                "text": "C) m=\\pm 4",
-                "isCorrect": false
-              },
-              {
-                "text": "D) m=\\pm 2",
-                "isCorrect": true
-              }
-            ]
-          },
-          {
-            "question": "Deňlemäni çözüň",
-            "formula": "(x^2+4)^2-7(x^2+4)+10=0",
-            "choices": [
-              {
-                "text": "A) \\pm 1",
-                "isCorrect": true
-              },
-              {
-                "text": "B) \\pm 2",
-                "isCorrect": false
-              },
-              {
-                "text": "C) \\pm 4",
-                "isCorrect": false
-              },
-              {
-                "text": "D) \\pm 3",
-                "isCorrect": false
-              }
-            ]
-          },
-          {
-            "question": "Aşakdaky deňlemede m-iň haýsy bahasynda deňlemäniň diňe iki aýry köki bar?",
-            "formula": "x^4-4x^2+m^2=0",
-            "choices": [
-              {
-                "text": "A) \\pm 5",
-                "isCorrect": false
-              },
-              {
-                "text": "B) \\pm 4",
-                "isCorrect": false
-              },
-              {
-                "text": "C) \\pm 1",
-                "isCorrect": false
-              },
-              {
-                "text": "D) \\pm 2",
-                "isCorrect": true
-              }
-            ]
-          },
-          {
-            "question": "Deňlemäni çözüň",
-            "formula": "2x^3-x^2+2x-1=0",
-            "choices": [
-              {
-                "text": "A) 0,2",
-                "isCorrect": false
-              },
-              {
-                "text": "B) 0,5",
-                "isCorrect": true
-              },
-              {
-                "text": "C) -0,2",
-                "isCorrect": false
-              },
-              {
-                "text": "D) -0,5",
-                "isCorrect": false
-              }
-            ]
-          },
-          {
-            "question": "Deňlemäni çözüň",
-            "formula": "x^3-x+6=0",
-            "choices": [
-              {
-                "text": "A) -1",
-                "isCorrect": false
-              },
-              {
-                "text": "B) -2",
-                "isCorrect": true
-              },
-              {
-                "text": "C) 2",
-                "isCorrect": false
-              },
-              {
-                "text": "D) 3",
-                "isCorrect": false
-              }
-            ]
-          }
-        ]
-      }
-    },
-    {
-      "task": {
         "title": "Bir näbellili çyzykly deňlemeler",
         "tests": [
           {
@@ -1357,6 +1130,236 @@
               },
               {
                 "text": "D) 3",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Iki näbelili deňlemeleri grafik usuly bilen çözmek",
+        "tests": [
+          {
+            "question": "Aşakdakylaryň haýsysy berlen deňlemäniň çözüwi",
+            "formula": "(x-2)^2+y^2=25",
+            "choices": [
+              {
+                "text": "A) (x;y)=(5;3)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (x;y)=(5;-4)",
+                "isCorrect": true
+              },
+              {
+                "text": "C) (x;y)=(-3;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (x;y)=(-3;-4)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdakylaryň haýsysy berlen sistemanyň çözüwi?",
+            "formula": "\\begin{cases} (x-2)^2-y &=5 \\\\ xy &=-4 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) (-1;-4)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (3;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (1;-4)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-4;1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Suratda deňlemeleriň grafigi görkezilen.Aşakdaky sistemalaryň haýsysy gabat gelýär?",
+            "formula": "",
+            "photo":"assets/for_tests/6_A4.jpg",
+            "choices": [
+              {
+                "text": "A) \\begin{cases} y+(x+1)^2+1 &=0 \\\\ y-x-2 &= 0 \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\begin{cases} y-(x+1)^2+1 &=0 \\\\ y-x-2 &= 0 \\end{cases}",
+                "isCorrect": true
+              },
+              {
+                "text": "C) \\begin{cases} y+(x-1)^2+1 &=0 \\\\ y+x+2 &= 0 \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\begin{cases} y-(x-1)^2-1 &=0 \\\\ y+x-2 &= 0 \\end{cases}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen sistemanyň çözüwi barmy ? Eger bar bolsa naçe sany?",
+            "formula": "\\begin{cases} xy &=2 \\\\ y&=x^2+1 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) çözüwi \\ ýok",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 1",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Suratda deňlemeleriň grafigi görkezilen.Grafikde görkezilen sistemanyň jogabyny tapyň",
+            "formula": "",
+            "photo":"assets/for_tests/6_B2.jpg",
+            "choices": [
+              {
+                "text": "A) (1;-2), (-3;1)",
+                "isCorrect": true
+              },
+              {
+                "text": "B) (-2;1), (1;-3)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-2;-1), (-1;-2)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (1;1), (-3;1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aşakdaky sistemada n-iň haýsy bahsynda sistemanyň dine bir çözüwi bar",
+            "formula": "\\begin{cases} x^2+y^2&=16 \\\\ -x^2+n &=y\\end{cases}",
+            "choices": [
+              {
+                "text": "A) n=4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) n=2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) n=-4",
+                "isCorrect": true
+              },
+              {
+                "text": "D) n=-2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Deňlemäni çözüň",
+            "formula": "\\begin{cases} (x+1)^2+(y-2)^2&=25 \\\\ x-y+2&=0 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) (3;5),(-4;-2)",
+                "isCorrect": true
+              },
+              {
+                "text": "B) (4;6),(-3;-1)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-3;-5),(-4;-2)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-4;-6),(-3;-1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Suratda deňlemeleriň grafigi görkezilen.Grafikde görkezilen sistemanyň jogabyny tapyň",
+            "formula": "",
+            "photo":"assets/for_tests/6_2A4.jpg",
+            "choices": [
+              {
+                "text": "A) \\begin{cases} x^2+(y-1)^2-4 &=0 \\\\ y-x+1 &=0 \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\begin{cases} x^2+(y-1)^2-16 &=0 \\\\ y+x-1 &=0  \\end{cases}",
+                "isCorrect": true
+              },
+              {
+                "text": "C) \\begin{cases} x^2+(y+1)^2-16 &=0 \\\\ y+x-1 &=0  \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\begin{cases} x^2+(y+1)^2-4 &=0 \\\\ y+x-1 &=0\\end{cases}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky sistemada m-iň haýsy bahsynda sistemanyň dine bir çözüwi bar",
+            "formula": "\\begin{cases} x^2+y^2 &=9 \\\\ x^2+m&=y\\end{cases}",
+            "choices": [
+              {
+                "text": "A) -3",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 9",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -9",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen sistemanyň çözüwi barmy ? Eger bar bolsa naçe sany?",
+            "formula": "\\begin{cases} xy &=1 \\\\ y&=x^2-3 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) çözüwi ýok",
                 "isCorrect": false
               }
             ]
