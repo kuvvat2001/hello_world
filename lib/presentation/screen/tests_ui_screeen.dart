@@ -94,6 +94,12 @@ class _LessonsItem extends StatelessWidget {
             context: context, widget: EquationTestsScreen(tests: task.tests)),
         7 => _route(
             context: context, widget: EquationTestsScreen(tests: task.tests)),
+        8 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        9 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
+        10 => _route(
+            context: context, widget: EquationTestsScreen(tests: task.tests)),
         _ => _route(
             context: context,
             widget: Scaffold(

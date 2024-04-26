@@ -1366,6 +1366,1144 @@
           }
         ]
       }
+    },
+    {
+      "task": {
+        "title": "Iki näbelili deňlemeleri grafik usuly bilen çözmek",
+        "tests": [
+          {
+            "question": "Aşakdakylaryň haýsysy berlen deňlemäniň çözüwi",
+            "formula": "(x-2)^2+y^2=25",
+            "choices": [
+              {
+                "text": "A) (x;y)=(5;3)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (x;y)=(5;-4)",
+                "isCorrect": true
+              },
+              {
+                "text": "C) (x;y)=(-3;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (x;y)=(-3;-4)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdakylaryň haýsysy berlen sistemanyň çözüwi?",
+            "formula": "\\begin{cases} (x-2)^2-y &=5 \\\\ xy &=-4 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) (-1;-4)",
+                "isCorrect": false
+              },
+              {
+                "text": "B) (3;4)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (1;-4)",
+                "isCorrect": true
+              },
+              {
+                "text": "D) (-4;1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Suratda deňlemeleriň grafigi görkezilen.Aşakdaky sistemalaryň haýsysy gabat gelýär?",
+            "formula": "",
+            "photo":"assets/for_tests/6_A4.jpg",
+            "choices": [
+              {
+                "text": "A) \\begin{cases} y+(x+1)^2+1 &=0 \\\\ y-x-2 &= 0 \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\begin{cases} y-(x+1)^2+1 &=0 \\\\ y-x-2 &= 0 \\end{cases}",
+                "isCorrect": true
+              },
+              {
+                "text": "C) \\begin{cases} y+(x-1)^2+1 &=0 \\\\ y+x+2 &= 0 \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\begin{cases} y-(x-1)^2-1 &=0 \\\\ y+x-2 &= 0 \\end{cases}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen sistemanyň çözüwi barmy ? Eger bar bolsa naçe sany?",
+            "formula": "\\begin{cases} xy &=2 \\\\ y&=x^2+1 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) çözüwi \\ ýok",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 1",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 3",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Suratda deňlemeleriň grafigi görkezilen.Grafikde görkezilen sistemanyň jogabyny tapyň",
+            "formula": "",
+            "photo":"assets/for_tests/6_B2.jpg",
+            "choices": [
+              {
+                "text": "A) (1;-2), (-3;1)",
+                "isCorrect": true
+              },
+              {
+                "text": "B) (-2;1), (1;-3)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-2;-1), (-1;-2)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (1;1), (-3;1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aşakdaky sistemada n-iň haýsy bahsynda sistemanyň dine bir çözüwi bar",
+            "formula": "\\begin{cases} x^2+y^2&=16 \\\\ -x^2+n &=y\\end{cases}",
+            "choices": [
+              {
+                "text": "A) n=4",
+                "isCorrect": false
+              },
+              {
+                "text": "B) n=2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) n=-4",
+                "isCorrect": true
+              },
+              {
+                "text": "D) n=-2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Deňlemäni çözüň",
+            "formula": "\\begin{cases} (x+1)^2+(y-2)^2&=25 \\\\ x-y+2&=0 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) (3;5),(-4;-2)",
+                "isCorrect": true
+              },
+              {
+                "text": "B) (4;6),(-3;-1)",
+                "isCorrect": false
+              },
+              {
+                "text": "C) (-3;-5),(-4;-2)",
+                "isCorrect": false
+              },
+              {
+                "text": "D) (-4;-6),(-3;-1)",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Suratda deňlemeleriň grafigi görkezilen.Grafikde görkezilen sistemanyň jogabyny tapyň",
+            "formula": "",
+            "photo":"assets/for_tests/6_2A4.jpg",
+            "choices": [
+              {
+                "text": "A) \\begin{cases} x^2+(y-1)^2-4 &=0 \\\\ y-x+1 &=0 \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\begin{cases} x^2+(y-1)^2-16 &=0 \\\\ y+x-1 &=0  \\end{cases}",
+                "isCorrect": true
+              },
+              {
+                "text": "C) \\begin{cases} x^2+(y+1)^2-16 &=0 \\\\ y+x-1 &=0  \\end{cases}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\begin{cases} x^2+(y+1)^2-4 &=0 \\\\ y+x-1 &=0\\end{cases}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky sistemada m-iň haýsy bahsynda sistemanyň dine bir çözüwi bar",
+            "formula": "\\begin{cases} x^2+y^2 &=9 \\\\ x^2+m&=y\\end{cases}",
+            "choices": [
+              {
+                "text": "A) -3",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 9",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -9",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Berlen sistemanyň çözüwi barmy ? Eger bar bolsa naçe sany?",
+            "formula": "\\begin{cases} xy &=1 \\\\ y&=x^2-3 \\end{cases}",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) çözüwi ýok",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Arifmetik progressiýa",
+        "tests": [
+          {
+            "question": "Aşakdaky berlen yzygiderligiň 5-nji agzasyny tapyň",
+            "formula": "a_n=2n-n^2",
+            "choices": [
+              {
+                "text": "A) -15",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 35",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 15",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -5",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Eger arifmetik progresiýanyň birinji agzasy we tapwudy degişlilikde 2 we -3 bolsalar , altynjy agzasyny tapyň ",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 13",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 17",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -13",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 16",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Eger arifmetik progresiýa 4 deň we altynjy agzasy 14 deň bolsa , progresiýanyň tapawudyny tapyň",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 2,5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 3,5",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Eger arifmetik progresiýanyň birinji agzasy 2-ä , tapawudy 4-e deň bolsa,arfimetik progresiýanyň ilkinji 10 agzasynyň jemini tapyň",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 220",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 100",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 400",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 200",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question":"3; 2,8; 2,6;... berlen arifmetik progresiýanyň naçe sany položitel agzasy bar?",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 15",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 17",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 16",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 14",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"10 dan 100 aralygyndaky ähli jübüt natural sanlaryň jemini tapyň? ",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 2531",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3533",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 2530",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 3534",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aşakdaky berlen arifmetik progresiýanyň ilkinji 20-i agzasynyň jemini tapyň",
+            "formula": "a_n=4n-1",
+            "choices": [
+              {
+                "text": "A) 821",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 820",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 823",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 824",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Arifmetik progresiýanyň 4-nji agzasy 20-ä , 10-nji agzasy 80-e deň bolsa, 7-nji agzasyny tapyň?",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 51",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 50",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 52",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 53",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "11-den 101 aralygyndaky ähli täk natural sanlaryň jemini tapyň",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 2575",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3674",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 2576",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 2577",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "4; 3,8; 3,6;... arifmrtik progresiýada naçe sany položitel agza bar?",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 25",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 20",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 24",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 23",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Geometrik progressiýa",
+        "tests": [
+          {
+            "question": "Geometrik progresiýanyň birinji agzasy we maýdalawjysy degişlilikde 1 we -2 bolsa , altynjy agzasyny tapyň",
+            "formula": "b_1=1  \\ q=-2, \\ b_6=?",
+            "choices": [
+              {
+                "text": "A) -64",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -32",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 64",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Eger geometrik progresiýanyp ikinji agzasy 5-e , dördünji agzasy 20-ä deň bolsa, geometrik progresiýanyň maýdalawjysyny tapyň?  ",
+            "formula": "b_2=4, \\ b_4=20, \\ q=?",
+            "choices": [
+              {
+                "text": "A) -2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\pm 2",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Geometrik progresiýanyň birinji agzasy 2-ä , maýdalawjysy bolsa 0,5-e deň bolsa, geometrik progresiýanyň ilkinji bäş agzasynyň jemini tapyň?",
+            "formula": "b_1=2, \\ q=0,5, \\ S_5=?",
+            "choices": [
+              {
+                "text": "A) \\frac{31}{128}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\frac{31}{8}",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 8",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Geometrik progresiýanyň birinji agzasy we maýdalawjysy degişlilikde 1 we -2 bolsa , altynjy agzasyny tapyň",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 54",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 27",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 18",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 9",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Eger geometrik progresiýanyp üçünji agzasy 3-e , bäşinji  agzasy 75-e deň bolsa, geometrik progresiýanyň maýdalawjysyny tapyň?",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) \\pm 5",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 5",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -5",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 15",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Geometrik progresiýanyň birinji agzasy 3-e , maýdalawjysy bolsa 2-q deň bolsa, geometrik progresiýanyň ilkinji bäş agzasynyň jemini tapyň? ",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 90",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 45",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 93",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 186",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Geometrik progresiýada maýdalawjysy 2-ä , sekiziji agzasy 8-ä deň bolsa, onuň birinji we ilkinji sekiz agzalarynyň jemini tapyň",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 8 \\ we \\ S_8=4080",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 8 \\ we \\ S_8=4081",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 9 \\ we  \\ S_8=4083",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 9 \\ we \\ S_8=4082",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aşakdaky berlenlere görä geometrik progresiýanyň birinji agzasyny we ýedinji agzasyny tapyň?",
+            "formula": "S_7=2186 \\ q=3 \\ b_1 , b_7= ?",
+            "choices": [
+              {
+                "text": "A) b_1=\\frac{1}{2} \\ we \\ b_7=\\frac{729}{2}",
+                "isCorrect": true
+              },
+              {
+                "text": "B) b_1=\\frac{1}{3} \\ we \\ b_7=\\frac{729}{3}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) b_1=\\frac{1}{3} \\ we \\ b_7=\\frac{729}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) b_1=\\frac{1}{2} \\ we \\ b_7=\\frac{729}{3}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Geometrik progressiýanyň 4-nji agzasy onuň 2-nji agzasyndan 24 san uly, 2-nji we 3-nji agzalaryň jemi 6-a deň. Bu progressiýanyň 6 agzasynyň jemini tapyň",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 784,2",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 783,2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 781,2",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 782,2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " 2; 4; 8; … geometrik progressiýanyň 10-njy agzasyny tapyň.",
+            "formula": "",
+            "choices": [
+              {
+                "text": "A) 2048",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 2046",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 2032",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 2056",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Trigonometrik funksiýalar",
+        "tests": [
+          {
+            "question": "Aşakaky görezilen gradusyň radian ölçeg birligini hasaplaň",
+            "formula": "-96^o",
+            "choices": [
+              {
+                "text": "A) -\\frac{16 \\pi}{15}",
+                "isCorrect": true
+              },
+              {
+                "text": "B) -\\frac{8 \\pi}{15}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -0,6 \\pi",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -0,3 \\pi",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky görkezilen radian ölçeginde berlen burçyň gradus ölçegini tapyň  ",
+            "formula": "\\frac{3 \\pi}{10}",
+            "choices": [
+              {
+                "text": "A) 108^o",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\left( \\frac{1}{1200} \\right)^o",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\left( \\frac{1}{600} \\right)^o",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 54",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Aňlatmanyň alamatyny kesgitlaň",
+            "formula": "\\sin{290^o} \\cos{70^o} \\tg{100^o}",
+            "choices": [
+              {
+                "text": "A) +",
+                "isCorrect": true
+              },
+              {
+                "text": "B) -",
+                "isCorrect": false
+              },
+              {
+                "text": "C) \\pm",
+                "isCorrect": false
+              },
+              {
+                "text": "D) alamatyny \\ kesgitlap \\ bolmaýar",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky görkezilenler haýsy çärýege degişli",
+            "formula": "Eger \\ \\cos{\\alpha}<0, \\ \\ctg{\\alpha}>0",
+            "choices": [
+              {
+                "text": "A) I",
+                "isCorrect": false
+              },
+              {
+                "text": "B) II",
+                "isCorrect": false
+              },
+              {
+                "text": "C) III",
+                "isCorrect": true
+              },
+              {
+                "text": "D) IV",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aňlatmanyň iň kiçi bahasyny tapyň?",
+            "formula": "7+\\sin{\\alpha}",
+            "choices": [
+              {
+                "text": "A) 5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 6",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 8",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 7",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aňlatmany hasaplaň ",
+            "formula": "3 \\sqrt{2}\\sin{(-1125^o)}",
+            "choices": [
+              {
+                "text": "A) -3",
+                "isCorrect": true
+              },
+              {
+                "text": "B) -2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 3",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -1",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aňlatmany hasaplaň ",
+            "formula": "3\\sin{30^o}- \\sqrt{3}\\sin{60^o}+0,5",
+            "choices": [
+              {
+                "text": "A) 1,5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 0,5",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 2,5",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Hasaplaň",
+            "formula": "\\sin{\\pi}+\\cos{\\frac{\\pi}{3}}+\\sin^2{\\frac{\\pi}{4}};",
+            "choices": [
+              {
+                "text": "A) 0",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 1",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\frac{1}{2}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Bahasyny hasaplaň",
+            "formula": "a)\\sin{\\frac{11}{3}\\pi} \\ ; \\ b)\\cos{\\frac{21}{4}\\pi}",
+            "choices": [
+              {
+                "text": "A) a)-\\frac{\\sqrt{3}}{2} \\ we \\ b)-\\frac{\\sqrt{2}}{2} ",
+                "isCorrect": true
+              },
+              {
+                "text": "B) a)-\\frac{\\sqrt{3}}{2} \\ we \\ b)\\frac{\\sqrt{2}}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) a)-\\frac{\\sqrt{2}}{2} \\ we \\ b)-\\frac{\\sqrt{3}}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) a)\\frac{\\sqrt{2}}{2} \\ we \\ b)\\frac{\\sqrt{3}}{2}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " Aşakdaky haýsy çärýege degişli?",
+            "formula": "\\frac{13\\pi}{6}",
+            "choices": [
+              {
+                "text": "A) I",
+                "isCorrect": true
+              },
+              {
+                "text": "B) II",
+                "isCorrect": false
+              },
+              {
+                "text": "C) III",
+                "isCorrect": false
+              },
+              {
+                "text": "D) IV",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "task": {
+        "title": "Getirme formulalar",
+        "tests": [
+          {
+            "question": "Hasaplaň",
+            "formula": "\\cos{\\dfrac{38\\pi}{3}}",
+            "choices": [
+              {
+                "text": "A) \\frac{\\sqrt{3}}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -\\frac{\\sqrt{3}}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -\\frac{1}{2}",
+                "isCorrect": true
+              },
+              {
+                "text": "D) \\frac{\\sqrt{2}}{2}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aşakdaky berlen aňlatmanyň bahasyny hasaplaň",
+            "formula": "8\\sin{(-30^o)}\\cos{60^o}\\tg{(-240^o)}\\ctg{210^o}",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -2",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 2\\sqrt{3}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 4",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": "Hasaplaň",
+            "formula": "\\sin{(-150^o)}",
+            "choices": [
+              {
+                "text": "A) -\\frac{1}{2}",
+                "isCorrect": true
+              },
+              {
+                "text": "B) \\frac{1}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -\\frac{\\sqrt{1}}{2}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": "Aňlatmanyň bahaysny hasaplaň",
+            "formula": "\\cos{\\frac{6\\pi}{6}}\\cos{\\frac{7\\pi}{10}}+\\sin{\\frac{6\\pi}{5}}\\sin{\\frac{7\\pi}{10}}",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) \\cos{\\frac{\\pi}{10}}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -\\sin{\\frac{\\pi}{10}}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 0",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question":"Hasaplaň",
+            "formula": "Eger \\sin{\\alpha}=\\frac{4}{5}, \\ bolsa \\ \\cos{2\\alpha} \\ naçe?",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -0,28",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2,28",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 0,36",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aňlatmany ýönekeýleşdiriň ",
+            "formula": "\\dfrac{1-\\cos{\\alpha}+\\cos{2\\alpha}}{\\sin{2\\alpha}-\\sin{\\alpha}}-(\\ctg{\\alpha}-3)",
+            "choices": [
+              {
+                "text": "A) -3",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 3",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 2",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -2",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Aňlatmany hasaplaň ",
+            "formula": "\\sin^2{22,5^o}+\\sin{22,5^o}\\cos{22,5^o}",
+            "choices": [
+              {
+                "text": "A) 1,5",
+                "isCorrect": false
+              },
+              {
+                "text": "B) 1",
+                "isCorrect": false
+              },
+              {
+                "text": "C) 0,5",
+                "isCorrect": true
+              },
+              {
+                "text": "D) 0,25",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question":"Hasaplaň",
+            "formula": "\\cos{\\dfrac{3\\pi}{8}}sin{\\dfrac{19\\pi}{8}}-sin{\\dfrac{3\\pi}{8}}sin{\\dfrac{7\\pi}{8}}",
+            "choices": [
+              {
+                "text": "A) 0",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 1",
+                "isCorrect": true
+              },
+              {
+                "text": "C) 0,5",
+                "isCorrect": false
+              },
+              {
+                "text": "D) -\\frac{1}{2}",
+                "isCorrect": false
+              }
+            ]
+          },
+          {
+            "question": " Hasaplaň",
+            "formula": "\\sin{(-600^o)}",
+            "choices": [
+              {
+                "text": "A) \\dfrac{\\sqrt{2}}{2} ",
+                "isCorrect": false
+              },
+              {
+                "text": "B) -\\dfrac{2}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "C) a) -\\dfrac{\\sqrt{3}}{2}",
+                "isCorrect": false
+              },
+              {
+                "text": "D) \\frac{\\sqrt{3}}{2}",
+                "isCorrect": true
+              }
+            ]
+          },
+          {
+            "question": " Aňlatmany hasaplaň:",
+            "formula": "\\cos^2({\\pi+x})+\\cos({\\dfrac{\\pi}{2}+x})",
+            "choices": [
+              {
+                "text": "A) 1",
+                "isCorrect": true
+              },
+              {
+                "text": "B) 0",
+                "isCorrect": false
+              },
+              {
+                "text": "C) -1",
+                "isCorrect": false
+              },
+              {
+                "text": "D) 0,5",
+                "isCorrect": false
+              }
+            ]
+          }
+        ]
+      }
     }
   ]
 }
