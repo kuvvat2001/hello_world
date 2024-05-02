@@ -1,48 +1,50 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:math_app/presentation/theories/theories_equation/equatin_topic.dart';
+import 'package:flutter_pdfview/flutter_pdfview.dart';
 
-class EquationScreen extends StatelessWidget {
-  const EquationScreen({super.key});
+class EquationLessonsScreen extends StatefulWidget {
+  const EquationLessonsScreen({super.key, required this.books});
+  final String? books;
 
   @override
+  // ignore: library_private_types_in_public_api
+  _EquationLessonsScreenState createState() => _EquationLessonsScreenState();
+}
+
+class _EquationLessonsScreenState extends State<EquationLessonsScreen> {
+  @override
   Widget build(BuildContext context) {
+    bool isLoading = widget.books != null && widget.books!.isEmpty;
     return Scaffold(
       appBar: AppBar(
+        title: const Text(""),
         backgroundColor: Colors.blue,
-        title: const Text('Deňlelemler we Deňsizlikler'),
       ),
-      body: FutureBuilder(
-        future: loadMathTopics(),
-        builder: (context, AsyncSnapshot<List<MathTopic>> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('No data available'));
-          } else {
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                  child: MathTopicCard(topic: snapshot.data![index]),
-                );
-              },
-            );
-          }
-        },
+      body: Padding(
+        padding: const EdgeInsets.only(left: 15, right: 15, bottom: 25),
+        child: Column(
+          children: [
+            if (isLoading)
+              const Center(child: CircularProgressIndicator.adaptive())
+            else
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  if (widget.books != null)
+                    SizedBox(
+                      height: 200,
+                      child: PDFView(
+                        filePath: "assets/for_tests/ALGEBRA.pdf",
+                        enableSwipe: true,
+                        swipeHorizontal: true,
+                        autoSpacing: false,
+                        pageFling: false,
+                      ),
+                    ),
+                ],
+              ),
+          ],
+        ),
       ),
     );
-  }
-
-  Future<List<MathTopic>> loadMathTopics() async {
-    String jsonString = await rootBundle.loadString('assets/math_topics.json');
-    List<dynamic> jsonList = json.decode(jsonString);
-    return jsonList.map((json) => MathTopic.fromJson(json)).toList();
   }
 }

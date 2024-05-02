@@ -77,36 +77,18 @@ class _LessonsItem extends StatelessWidget {
     );
   }
 
-  void _push(int index, BuildContext context) => switch (index) {
-        0 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        1 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        2 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        3 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        4 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        5 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        6 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        7 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        8 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        9 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        10 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        _ => _route(
-            context: context,
-            widget: Scaffold(
-              appBar: AppBar(),
-              body: Center(child: Text(task.title)),
-            ))
-      };
+void _push(int index, BuildContext context) {
+  Widget widget;
+  if (index >= 0 && index <= 30) {
+    widget = EquationTestsScreen(tests: task.tests);
+  } else {
+    widget = Scaffold(
+      appBar: AppBar(),
+      body: Center(child: Text(task.title)),
+    );
+  }
+  _route(context: context, widget: widget);
+}
 
   Future<T?> _route<T>(
           {required BuildContext context, required Widget widget}) =>
@@ -116,6 +98,7 @@ class _LessonsItem extends StatelessWidget {
           builder: (context) => widget,
         ),
       );
+
 
   List<Color> getColorList(int elementSayisi) {
     List<Color> colors = [];
@@ -130,10 +113,4 @@ class _LessonsItem extends StatelessWidget {
     return colors[index % colors.length];
   }
 
-  void _main() {
-    int elementSayisi = 100;
-    List<Color> renklerListesi = getColorList(elementSayisi);
-
-    // renklerListesi şimdi 100 tane element içeriyor ve renkler belirttiğiniz sırayla tekrarlanıyor.
-  }
 }

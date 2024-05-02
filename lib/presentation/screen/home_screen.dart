@@ -5,8 +5,7 @@ import 'package:math_app/presentation/screen/books_scrren.dart';
 import 'package:math_app/presentation/screen/results_screen.dart';
 import 'package:math_app/presentation/screen/statistic_screen.dart';
 import 'package:math_app/presentation/screen/tests_ui_screeen.dart';
-
-import '../theories/theories_equation/equation_theoris_screen.dart';
+import '../theories/theories_equation/equatin_topic.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key, required this.repository});
@@ -34,7 +33,7 @@ class HomeScreen extends StatelessWidget {
         ],
         children: [
           _buildMenuItem(context, "Sapaklar", Icons.book, Colors.greenAccent,
-              const EquationScreen()),
+               LessonsUiScreen(repository: repository, title: '',)),
           _buildMenuItem(
               context,
               "Testler",
@@ -48,7 +47,7 @@ class HomeScreen extends StatelessWidget {
             "Netijeler",
             Icons.poll,
             Colors.amber,
-            const ResultsScreen(),
+             const ResultsScreen(),
           ),
           _buildMenuItem(context, "Kitaplar", Icons.menu_book_rounded,
               Colors.deepPurple, const BooksScreen()),

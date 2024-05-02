@@ -6,6 +6,7 @@ import 'package:flutter_signature_pad/flutter_signature_pad.dart';
 import 'package:math_app/domain/models/task_response_data.dart';
 import 'package:math_app/presentation/widgets/app_confeti_widget.dart';
 
+
 class EquationTestsScreen extends StatefulWidget {
   const EquationTestsScreen({super.key, required this.tests});
   final List<Test> tests;
@@ -39,6 +40,8 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
     });
   }
 
+
+
   @override
   void dispose() {
     _controllerCenter.dispose();
@@ -65,16 +68,6 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
         padding: const EdgeInsets.only(left: 15, right: 15, bottom: 25),
         child: Stack(
           children: [
-            if (isWritingBoardOpen)
-              Container(
-                color: Colors.grey.withOpacity(0.1),
-                child: Signature(
-                  color: Colors.black,
-                  strokeWidth: 3.0,
-                  backgroundPainter: null,
-                  key: signatureKey,
-                ),
-              ),
             if (isLoading)
               const Center(child: CircularProgressIndicator.adaptive())
             else
@@ -138,7 +131,14 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                       )
                   ]),
                 ],
-              )
+              ),
+            if (isWritingBoardOpen)
+              Signature(
+                color: Colors.black,
+                strokeWidth: 3.0,
+                backgroundPainter: null,
+                key: signatureKey,
+              ),
           ],
         ),
       ),
@@ -155,11 +155,18 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
 
   void _handler(Choice e) {
     if (widget.tests.length == (currentQuestionIndex + 1)) {
-      final score = answers.where((e) => e == true).length;
+      final score = answers.where((e) => e == true).length+1;
 
-      _controllerCenter.play();
-      Future.delayed(const Duration(seconds: 2),
-          () => _showActionSheet(context, 'true answers : $score'));
+      if (score < 6) {
+        Future.delayed(
+            const Duration(seconds: 2),
+            () => _showActionSheett(context,
+                'Siz 10 soragdan $score-sini bildiniz, täzeden synanyşmagyňyzy maslahat berýäris'));
+      } else {
+        _controllerCenter.play();
+        Future.delayed(const Duration(seconds: 2),
+            () => _showActionSheet(context, 'Dogry jogap: $score'));
+      }
     } else {
       // tracker how many true answers added
       answers.add(e.isCorrect);
@@ -170,7 +177,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       showCupertinoModalPopup<void>(
         context: context,
         builder: (BuildContext context) => CupertinoActionSheet(
-          title: const Text('Gutlaýaryn'),
+          title: const Text('Synagy geçdiňiz'),
           message: Text(msg),
           actions: <CupertinoActionSheetAction>[
             CupertinoActionSheetAction(
@@ -180,6 +187,25 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                 Navigator.pop(context);
               },
               child: const Text('Yza çyk'),
+            ),
+          ],
+        ),
+      );
+
+  void _showActionSheett(BuildContext context, String msg) =>
+      showCupertinoModalPopup<void>(
+        context: context,
+        builder: (BuildContext context) => CupertinoActionSheet(
+          title: const Text('Synagy geçmediňiz'),
+          message: Text(msg),
+          actions: <CupertinoActionSheetAction>[
+            CupertinoActionSheetAction(
+              isDefaultAction: true,
+              onPressed: () {
+                Navigator.pop(context);
+                Navigator.pop(context);
+              },
+              child: const Text('Täzden synanyşyň'),
             ),
           ],
         ),
