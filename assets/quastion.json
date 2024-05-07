@@ -3,7 +3,7 @@
     {
       "task": {
         "title": "Funksiýalar we onuň kesgitlemesi",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/funksiya.pdf",
         "tests": [
           {
             "question": "Aşakdaky berlen funksiýanyň f(1) bolanda tapyň ?",
@@ -231,7 +231,7 @@
     {
       "task": {
         "title": "Kwadrat üç agza",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/Kwadrat_üç_agza.pdf",
         "tests": [
           {
             "question": " Aşakdaky berlen kwadrat üç agzanyň näçe sany köki bar",
@@ -459,7 +459,7 @@
     {
       "task": {
         "title": "y=ax^2 funksiýa we onun kesgitlemesi",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/lesson_3.pdf",
         "tests": [
           {
             "question": "Asakdaky berlen grafikler kesişýan bolsalar , ähli kesişme koordinatorlaryny tapyň",
@@ -689,7 +689,7 @@
     {
       "task": {
         "title": "Bir näbellili çyzykly deňsizlikler",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/lesson_4.pdf",
         "tests": [
           {
             "question": "Berilen deňsizligi çözüň",
@@ -916,7 +916,7 @@
     },
     {
       "task": {
-        "title": "iki näbellili çyzykly deňlemeler",
+        "title": "Bir näbellili çyzykly deňlemeler",
         "books": "assets/for_tests/ALGEBRA.pdf",
         "tests": [
           {

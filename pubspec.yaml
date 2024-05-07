@@ -41,9 +41,11 @@ dependencies:
   flutter_launcher_icons: ^0.13.1
   confetti: ^0.7.0
   flutter_easyloading: ^3.0.5
-  shared_preferences: ^2.2.2
-  flutter_pdfview: ^1.3.2
-
+  shared_preferences: ^2.2.3
+  path_provider: ^2.1.2
+  syncfusion_flutter_pdfviewer: ^24.2.8
+ 
+  
 
 
 flutter_icons:
@@ -82,6 +84,7 @@ flutter:
     - assets/math_topics.json
     - assets/photo/math.jpg
     - assets/icon/icon.png
+    - assets/for_tests/lesson/
     - assets/for_tests/3_A3.jpg
     - assets/for_tests/3_3A3.jpg
     - assets/for_tests/6_A4.jpg

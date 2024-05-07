@@ -14,6 +14,7 @@ class LessonsUiScreen extends StatefulWidget {
   final IRepository repository;
   final String title;
 
+
   @override
   State<LessonsUiScreen> createState() => _LessonsUiScreenState();
 }
@@ -41,7 +42,7 @@ class _LessonsUiScreenState extends State<LessonsUiScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(widget.title),
+          title: const Text("Sapaklar"),
           backgroundColor: Colors.blue,
         ),
         body: data != null
@@ -68,7 +69,7 @@ class _LessonsItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(task.title),
+        title:  Text(task.title),
         onTap: () => _push(index, context),
         trailing: const Icon(
           Icons.keyboard_arrow_right,
@@ -81,7 +82,7 @@ class _LessonsItem extends StatelessWidget {
 void _push(int index, BuildContext context) {
   Widget widget;
   if (index >= 0 && index <= 30) {
-    widget = EquationLessonsScreen(books:task.books);
+    widget = EquationLessonsScreen(books:task.books,);
   } else {
     widget = Scaffold(
       appBar: AppBar(),

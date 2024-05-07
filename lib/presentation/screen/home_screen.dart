@@ -47,7 +47,7 @@ class HomeScreen extends StatelessWidget {
             "Netijeler",
             Icons.poll,
             Colors.amber,
-             const ResultsScreen(),
+             const ResultScreen(tests: [],),
           ),
           _buildMenuItem(context, "Kitaplar", Icons.menu_book_rounded,
               Colors.deepPurple, const BooksScreen()),

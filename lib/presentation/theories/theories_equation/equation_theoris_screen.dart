@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_pdfview/flutter_pdfview.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class EquationLessonsScreen extends StatefulWidget {
-  const EquationLessonsScreen({super.key, required this.books});
   final String? books;
+
+
+  const EquationLessonsScreen(
+      {Key? key, this.books,})
+      : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -11,40 +15,41 @@ class EquationLessonsScreen extends StatefulWidget {
 }
 
 class _EquationLessonsScreenState extends State<EquationLessonsScreen> {
+  bool isLoading =
+      true; // Yükleniyor durumunu kontrol etmek için bir değişken eklendi.
+
   @override
   Widget build(BuildContext context) {
-    bool isLoading = widget.books != null && widget.books!.isEmpty;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(""),
+        title:  Text(""),
         backgroundColor: Colors.blue,
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(left: 15, right: 15, bottom: 25),
-        child: Column(
-          children: [
-            if (isLoading)
-              const Center(child: CircularProgressIndicator.adaptive())
-            else
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  if (widget.books != null)
-                    SizedBox(
-                      height: 200,
-                      child: PDFView(
-                        filePath: "assets/for_tests/ALGEBRA.pdf",
-                        enableSwipe: true,
-                        swipeHorizontal: true,
-                        autoSpacing: false,
-                        pageFling: false,
-                      ),
-                    ),
-                ],
-              ),
-          ],
-        ),
-      ),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : SfPdfViewer.asset(
+              widget.books ?? '',
+              canShowScrollHead: false,
+         
+
+              // Eğer null ise boş string atanıyor.
+            ),
     );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    // Widget oluşturulduğunda PDF dosyasını yükleme işlemi yapılıyor.
+    _loadPDF();
+  }
+
+  Future<void> _loadPDF() async {
+    if (widget.books != null && widget.books!.isNotEmpty) {
+      // PDF dosyasının yolu mevcut ve boş değilse isLoading false olarak ayarlanıyor.
+      setState(() {
+        isLoading = false;
+      });
+    }
   }
 }

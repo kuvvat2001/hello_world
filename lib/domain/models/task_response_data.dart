@@ -80,13 +80,15 @@ class Task {
 
   factory Task.fromJson(Map<String, dynamic> json) => Task(
         title: json["title"],
-        tests: List<Test>.from(json["tests"].map((x) => Test.fromJson(x))),
         books: json["books"],
+        tests: List<Test>.from(json["tests"].map((x) => Test.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "title": title,
+        "books": books,
         "tests": List<dynamic>.from(tests.map((x) => x.toJson())),
+        
       };
 
   @override
@@ -98,12 +100,15 @@ class Test {
   final String? formula;
   final String question;
   final List<Choice> choices;
+  int correctIndex;
+
 
   Test({
     required this.photo,
     required this.formula,
     required this.question,
     required this.choices,
+    this.correctIndex=-1,
   });
 
   Test copyWith({
