@@ -16,7 +16,7 @@ class EquationLessonsScreen extends StatefulWidget {
 
 class _EquationLessonsScreenState extends State<EquationLessonsScreen> {
   bool isLoading =
-      true; // Yükleniyor durumunu kontrol etmek için bir değişken eklendi.
+      true; 
 
   @override
   Widget build(BuildContext context) {

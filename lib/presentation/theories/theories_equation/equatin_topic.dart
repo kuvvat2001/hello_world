@@ -49,7 +49,7 @@ class _LessonsUiScreenState extends State<LessonsUiScreen> {
             ? ListView.builder(
               shrinkWrap: true,
                 itemCount: data!.data.length,
-                // Toplamda 4 tema
+                
                 itemBuilder: (BuildContext context, int index) =>
                     _LessonsItem(index, data!.data[index].task),
 
