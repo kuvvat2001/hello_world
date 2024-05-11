@@ -1,15 +1,28 @@
+import 'dart:convert';
+
 import 'package:confetti/confetti.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_math_fork/flutter_math.dart';
 import 'package:flutter_signature_pad/flutter_signature_pad.dart';
+import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/models/task_response_data.dart';
+import 'package:math_app/domain/repository/repository.dart';
+import 'package:math_app/presentation/utils/const.dart';
 import 'package:math_app/presentation/widgets/app_confeti_widget.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 
 class EquationTestsScreen extends StatefulWidget {
-  const EquationTestsScreen({Key? key, required this.tests}) : super(key: key);
+  const EquationTestsScreen({
+    Key? key,
+    required this.tests,
+    required this.pref,
+    required this.index,
+    required this.repository,
+  }) : super(key: key);
   final List<Test> tests;
+  final LocalStoreRepository pref;
+  final int index;
+  final IRepository repository;
 
   @override
   _EquationTestsScreenState createState() => _EquationTestsScreenState();
@@ -32,13 +45,26 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
 
   @override
   void initState() {
-    _controllerCenter = ConfettiController(duration: const Duration(seconds: 10));
+    _controllerCenter =
+        ConfettiController(duration: const Duration(seconds: 10));
+    checkStore();
     super.initState();
   }
 
-  void saveTestResult(int testIndex, bool isCorrect) async {
-    final SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setBool('test_$testIndex', isCorrect);
+  void checkStore() async {
+    if (widget.pref.checkKey('${AppConstants.kTestQuestion}${widget.index}')) {
+      await widget.pref
+          .removeKey('${AppConstants.kTestQuestion}${widget.index}');
+    }
+  }
+
+  void saveTestResult(int questionIndex, bool isCorrect) {
+    final results = <String, dynamic>{};
+    results.addAll({'$questionIndex': isCorrect});
+    widget.pref.setData(
+      '${AppConstants.kTestQuestion}${widget.index}',
+      jsonEncode(results),
+    );
   }
 
   void checkAnswer(int choiceIndex) {
@@ -168,8 +194,10 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                 'Siz 10 soragdan $score-sini bildiniz, täzeden synanyşmagyňyzy maslahat berýäris'));
       } else {
         _controllerCenter.play();
+
         Future.delayed(const Duration(seconds: 2),
-            () => _showActionSheet(context, 'Dogry jogap: $score'));
+                () => _showActionSheet(context, 'Dogry jogap: $score'))
+            .whenComplete(() => widget.repository.getTasks());
       }
     } else {
       answers.add(e.isCorrect);
@@ -225,4 +253,3 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
     }
   }
 }
-

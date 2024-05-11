@@ -1,6 +1,6 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
-final class LocalStoreRepository  {
+final class LocalStoreRepository {
   final SharedPreferences _ref;
 
   const LocalStoreRepository({required SharedPreferences ref}) : _ref = ref;
@@ -22,6 +22,10 @@ final class LocalStoreRepository  {
   int getInt(String key) => _ref.getInt(key) ?? 0;
 
   String getString(String key) => _ref.getString(key) ?? '';
+
+  bool checkKey(String key) => _ref.containsKey(key);
+
+  Future<bool> removeKey(String key) => _ref.remove(key);
 
   List<String> getList(String key) => _ref.getStringList(key) ?? [];
 }

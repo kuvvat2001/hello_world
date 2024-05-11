@@ -1,18 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/repository/repository.dart';
 import 'package:math_app/presentation/screen/books_scrren.dart';
 import 'package:math_app/presentation/screen/results_screen.dart';
 import 'package:math_app/presentation/screen/statistic_screen.dart';
 import 'package:math_app/presentation/screen/tests_ui_screeen.dart';
+import 'package:math_app/presentation/utils/const.dart';
+
 import '../theories/theories_equation/equatin_topic.dart';
+
 // constants.dart
-class AppConstants {
-  static const double gridSize = 150.0;
-  static const double mainAxisSpacing = 20.0;
-  static const double crossAxisSpacing = 16.0;
-  static const EdgeInsets padding = EdgeInsets.only(top: 25, left: 16, right: 16, bottom: 16);
-}
 
 // menu_item.dart
 class MenuItem {
@@ -21,13 +19,22 @@ class MenuItem {
   final Color color;
   final Widget screen;
 
-  MenuItem({required this.title, required this.icon, required this.color, required this.screen});
+  MenuItem(
+      {required this.title,
+      required this.icon,
+      required this.color,
+      required this.screen});
 }
 
 // home_screen.dart
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key, required this.repository});
+  const HomeScreen({
+    super.key,
+    required this.repository,
+    required this.pref,
+  });
   final IRepository repository;
+  final LocalStoreRepository pref;
 
   @override
   Widget build(BuildContext context) {
@@ -59,13 +66,17 @@ class HomeScreen extends StatelessWidget {
         title: "Sapaklar",
         icon: Icons.book,
         color: Colors.greenAccent,
-        screen: LessonsUiScreen(repository: repository, title: '',),
+        screen: LessonsUiScreen(
+          repository: repository,
+          title: '',
+        ),
       ),
       MenuItem(
         title: "Testler",
         icon: Icons.assignment,
         color: Colors.blueAccent,
-        screen: TestsUiScreen(repository: repository, title: 'Testler'),
+        screen:
+            TestsUiScreen(repository: repository, title: 'Testler', pref: pref),
       ),
       MenuItem(
         title: "Satistikalar",
@@ -77,7 +88,9 @@ class HomeScreen extends StatelessWidget {
         title: "Netijeler",
         icon: Icons.poll,
         color: Colors.amber,
-        screen: const ResultScreen(tests: [],),
+        screen: const ResultScreen(
+          tests: [],
+        ),
       ),
       MenuItem(
         title: "Kitaplar",
@@ -87,13 +100,16 @@ class HomeScreen extends StatelessWidget {
       ),
     ];
 
-    return menuItems.map((menuItem) => _buildMenuItem(context, menuItem)).toList();
+    return menuItems
+        .map((menuItem) => _buildMenuItem(context, menuItem))
+        .toList();
   }
 
   Widget _buildMenuItem(BuildContext context, MenuItem menuItem) {
     return GestureDetector(
       onTap: () {
-        Navigator.push(context, MaterialPageRoute(builder: (context) => menuItem.screen));
+        Navigator.push(
+            context, MaterialPageRoute(builder: (context) => menuItem.screen));
       },
       child: Container(
         padding: const EdgeInsets.all(16),
