@@ -1,18 +1,23 @@
+import 'dart:convert';
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
+import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/models/task_response_data.dart';
 import 'package:math_app/domain/repository/repository.dart';
 import 'package:math_app/presentation/question_tests/equation_tests_screen.dart';
+import 'package:math_app/presentation/utils/const.dart';
 
 class TestsUiScreen extends StatefulWidget {
   const TestsUiScreen({
     super.key,
     required this.repository,
     required this.title,
+    required this.pref,
   });
   final IRepository repository;
   final String title;
+  final LocalStoreRepository pref;
 
   @override
   State<TestsUiScreen> createState() => _TestsUiScreenState();
@@ -46,22 +51,49 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
         ),
         body: data != null
             ? ListView.builder(
-                itemCount: data!.data.length,
+                itemCount: isAllowedMore ? data!.data.length : 4,
                 // Toplamda 4 tema
-                itemBuilder: (BuildContext context, int index) =>
-                    _LessonsItem(index, data!.data[index].task),
+                itemBuilder: (BuildContext context, int index) => _LessonsItem(
+                  index: index,
+                  task: data!.data[index].task,
+                  pref: widget.pref,
+                  repository: widget.repository,
+                ),
 
                 padding:
                     const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
               )
             : const Center(child: CircularProgressIndicator.adaptive()));
   }
+
+  bool get isAllowedMore {
+    final results = <Map<String, dynamic>>[];
+    for (var i = 0; i < data!.data.take(4).length; i++) {
+      if (widget.pref.checkKey('${AppConstants.kTestQuestion}$i')) {
+        final savedData =
+            widget.pref.getString('${AppConstants.kTestQuestion}$i');
+        final parsed = jsonDecode(savedData) as Map<String, dynamic>;
+        results.add(parsed);
+      }
+    }
+    if (results.length < 4) return false;
+    final result =
+        results.every((e) => e.values.where((e) => e == true).length > 6);
+    return result;
+  }
 }
 
 class _LessonsItem extends StatelessWidget {
-  const _LessonsItem(this.index, this.task);
+  const _LessonsItem({
+    required this.index,
+    required this.task,
+    required this.pref,
+    required this.repository,
+  });
   final int index;
   final Task task;
+  final LocalStoreRepository pref;
+  final IRepository repository;
 
   @override
   Widget build(BuildContext context) {
@@ -77,39 +109,28 @@ class _LessonsItem extends StatelessWidget {
     );
   }
 
-  void _push(int index, BuildContext context) => switch (index) {
-        0 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        1 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        2 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        3 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        4 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        5 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        6 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        7 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        8 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        9 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        10 => _route(
-            context: context, widget: EquationTestsScreen(tests: task.tests)),
-        _ => _route(
-            context: context,
-            widget: Scaffold(
-              appBar: AppBar(),
-              body: Center(child: Text(task.title)),
-            ))
-      };
+  void _push(int index, BuildContext context) {
+    Widget widget;
+    if (index >= 0 && index <= 30) {
+      widget = EquationTestsScreen(
+        tests: task.tests,
+        pref: pref,
+        index: index,
+        repository: repository,
+      );
+    } else {
+      widget = Scaffold(
+        appBar: AppBar(),
+        body: Center(child: Text(task.title)),
+      );
+    }
+    _route(context: context, widget: widget);
+  }
 
-  Future<T?> _route<T>(
-          {required BuildContext context, required Widget widget}) =>
+  Future<T?> _route<T>({
+    required BuildContext context,
+    required Widget widget,
+  }) =>
       Navigator.push<T?>(
         context,
         MaterialPageRoute(
@@ -128,12 +149,5 @@ class _LessonsItem extends StatelessWidget {
   Color _getThemeColor(int index) {
     List<Color> colors = [Colors.white, Colors.white];
     return colors[index % colors.length];
-  }
-
-  void _main() {
-    int elementSayisi = 100;
-    List<Color> renklerListesi = getColorList(elementSayisi);
-
-    // renklerListesi şimdi 100 tane element içeriyor ve renkler belirttiğiniz sırayla tekrarlanıyor.
   }
 }

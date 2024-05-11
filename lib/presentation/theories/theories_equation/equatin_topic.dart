@@ -1,76 +1,104 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_math_fork/flutter_math.dart';
-class MathTopic {
-  final String string;
-  final String title;
-  final String formula;
-  final String imageUrl;
+import 'package:math_app/domain/models/task_response_data.dart';
+import 'package:math_app/domain/repository/repository.dart';
+import 'package:math_app/presentation/theories/theories_equation/equation_theoris_screen.dart';
 
-  MathTopic({
-    required this.string,
+class LessonsUiScreen extends StatefulWidget {
+  const LessonsUiScreen({
+    super.key,
+    required this.repository,
     required this.title,
-    required this.formula,
-    required this.imageUrl,
   });
+  final IRepository repository;
+  final String title;
 
-  factory MathTopic.fromJson(Map<String, dynamic> json) {
-    return MathTopic(
-      string: json['string'],
-      title: json['title'],
-      formula: json['formula'],
-      imageUrl:json['imageUrl'],
-    );
-  }
+
+  @override
+  State<LessonsUiScreen> createState() => _LessonsUiScreenState();
 }
 
-class MathTopicCard extends StatelessWidget {
-  final MathTopic topic;
+class _LessonsUiScreenState extends State<LessonsUiScreen> {
+  TaskResponse? data;
 
-  const MathTopicCard({Key? key, required this.topic}) : super(key: key);
+  @override
+  void didChangeDependencies() {
+    _init();
+    log('didChangeDependencies');
+    super.didChangeDependencies();
+  }
+
+  void _init() async {
+    final repo = await widget.repository.getTasks();
+    setState(() {
+      data = repo;
+    });
+
+    log('$data');
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.symmetric(),
-      decoration: BoxDecoration(
-        border: Border.all(color: Colors.white),
-        borderRadius: BorderRadius.circular(0),
-      ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: Text(
-              topic.title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-            ),
-          ),
-          Text(
-            topic.string,
-            style: const TextStyle(fontSize: 14),
-          ),
-         const Text("Kesgitleme. Üýtgeýän. ululygyň denlemäni dogry deňlige öwürýän bahasyna deňlemäniň köki diýilýär.",
-          style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-          ),
-           const Text("Meselem, " ),
-           const Text("(x-2)(x-3)=0",style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold)),
-           const Text("deňlemäniň iki köki bardyr: , 2 we 3. Sebäbi, x=2 we x=3 bolanda bu deňleme dogry I deňlige öwrülýär. x-iň beýleki bahalarynda deňlemäniň çep bölegi 0-a deň däldir."),
-          const SizedBox(height: 10),
-           Center(
-             child: Math.tex(
-             r"(x-2)(x-3)=0",
-             mathStyle: MathStyle.display,
-           textStyle: const TextStyle(fontSize: 24.0, color: Colors.black),
-                     ),
-           ),
-          const SizedBox(height: 10),
-          Image.asset(topic.imageUrl),
-          Text(
-            topic.string,
-            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-          ),
-        ],
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text("Sapaklar"),
+          backgroundColor: Colors.blue,
+        ),
+        body: data != null
+            ? ListView.builder(
+              shrinkWrap: true,
+                itemCount: data!.data.length,
+                
+                itemBuilder: (BuildContext context, int index) =>
+                    _LessonsItem(index, data!.data[index].task),
+
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
+              )
+            : const Center(child: CircularProgressIndicator.adaptive()));
+  }
+}
+
+class _LessonsItem extends StatelessWidget {
+  const _LessonsItem(this.index, this.task);
+  final int index;
+  final Task task;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title:  Text(task.title),
+        onTap: () => _push(index, context),
+        trailing: const Icon(
+          Icons.keyboard_arrow_right,
+          color: Colors.black,
+        ),
       ),
     );
   }
+
+void _push(int index, BuildContext context) {
+  Widget widget;
+  if (index >= 0 && index <= 30) {
+    widget = EquationLessonsScreen(books:task.books,);
+  } else {
+    widget = Scaffold(
+      appBar: AppBar(),
+      body: Center(child: Text(task.title)),
+    );
+  }
+  _route(context: context, widget: widget);
+}
+
+  Future<T?> _route<T>(
+          {required BuildContext context, required Widget widget}) =>
+      Navigator.push<T?>(
+        context,
+        MaterialPageRoute(
+          builder: (context) => widget,
+        ),
+      );
+
 }

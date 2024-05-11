@@ -59,33 +59,40 @@ class Datum {
 class Task {
   final String title;
   final List<Test> tests;
+  final String books;
 
   Task({
     required this.title,
     required this.tests,
+    required this.books,
   });
 
   Task copyWith({
     String? title,
     List<Test>? tests,
+    String? books,
   }) =>
       Task(
         title: title ?? this.title,
         tests: tests ?? this.tests,
+        books: books ?? this.books,
       );
 
   factory Task.fromJson(Map<String, dynamic> json) => Task(
         title: json["title"],
+        books: json["books"],
         tests: List<Test>.from(json["tests"].map((x) => Test.fromJson(x))),
       );
 
   Map<String, dynamic> toJson() => {
         "title": title,
+        "books": books,
         "tests": List<dynamic>.from(tests.map((x) => x.toJson())),
+        
       };
 
   @override
-  String toString() => 'Task(title: $title, tests: $tests)';
+  String toString() => 'Task(title: $title, tests: $tests,books: $books)';
 }
 
 class Test {
@@ -93,12 +100,15 @@ class Test {
   final String? formula;
   final String question;
   final List<Choice> choices;
+  int correctIndex;
+
 
   Test({
     required this.photo,
     required this.formula,
     required this.question,
     required this.choices,
+    this.correctIndex=-1,
   });
 
   Test copyWith({
@@ -123,7 +133,7 @@ class Test {
       );
 
   Map<String, dynamic> toJson() => {
-        "photo":photo,
+        "photo": photo,
         "formula": formula,
         "question": question,
         "choices": List<dynamic>.from(choices.map((x) => x.toJson())),
@@ -131,7 +141,7 @@ class Test {
 
   @override
   String toString() =>
-      'Test(question: $question, formula: $formula,photo:$photo,choices: $choices)';
+      'Test(question: $question, formula: $formula,photo: $photo,choices: $choices, )';
 }
 
 class Choice {

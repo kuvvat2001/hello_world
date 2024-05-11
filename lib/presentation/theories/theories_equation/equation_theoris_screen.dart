@@ -1,48 +1,55 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:math_app/presentation/theories/theories_equation/equatin_topic.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
-class EquationScreen extends StatelessWidget {
-  const EquationScreen({super.key});
+class EquationLessonsScreen extends StatefulWidget {
+  final String? books;
+
+
+  const EquationLessonsScreen(
+      {Key? key, this.books,})
+      : super(key: key);
+
+  @override
+  // ignore: library_private_types_in_public_api
+  _EquationLessonsScreenState createState() => _EquationLessonsScreenState();
+}
+
+class _EquationLessonsScreenState extends State<EquationLessonsScreen> {
+  bool isLoading =
+      true; 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title:  Text(""),
         backgroundColor: Colors.blue,
-        title: const Text('Deňlelemler we Deňsizlikler'),
       ),
-      body: FutureBuilder(
-        future: loadMathTopics(),
-        builder: (context, AsyncSnapshot<List<MathTopic>> snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          } else if (snapshot.hasError) {
-            return Center(child: Text('Error: ${snapshot.error}'));
-          } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('No data available'));
-          } else {
-            return ListView.builder(
-              itemCount: snapshot.data!.length,
-              itemBuilder: (context, index) {
-                return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 8),
-                  child: MathTopicCard(topic: snapshot.data![index]),
-                );
-              },
-            );
-          }
-        },
-      ),
+      body: isLoading
+          ? const Center(child: CircularProgressIndicator())
+          : SfPdfViewer.asset(
+              widget.books ?? '',
+              canShowScrollHead: false,
+         
+
+              // Eğer null ise boş string atanıyor.
+            ),
     );
   }
 
-  Future<List<MathTopic>> loadMathTopics() async {
-    String jsonString = await rootBundle.loadString('assets/math_topics.json');
-    List<dynamic> jsonList = json.decode(jsonString);
-    return jsonList.map((json) => MathTopic.fromJson(json)).toList();
+  @override
+  void initState() {
+    super.initState();
+    // Widget oluşturulduğunda PDF dosyasını yükleme işlemi yapılıyor.
+    _loadPDF();
+  }
+
+  Future<void> _loadPDF() async {
+    if (widget.books != null && widget.books!.isNotEmpty) {
+      // PDF dosyasının yolu mevcut ve boş değilse isLoading false olarak ayarlanıyor.
+      setState(() {
+        isLoading = false;
+      });
+    }
   }
 }

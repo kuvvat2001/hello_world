@@ -9,7 +9,7 @@ class Repository implements IRepository {
     final data = await _handler.fetchJsonCompute(
         'assets/quastion.json', TaskResponse.fromJson);
     return data;
-  }
+  } 
   
   @override
   Future<TaskResponse> getLesson() {
