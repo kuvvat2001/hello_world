@@ -83,7 +83,7 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
   }
 }
 
-class _LessonsItem extends StatelessWidget {
+class _LessonsItem extends StatefulWidget {
   const _LessonsItem({
     required this.index,
     required this.task,
@@ -96,35 +96,73 @@ class _LessonsItem extends StatelessWidget {
   final IRepository repository;
 
   @override
+  State<_LessonsItem> createState() => _LessonsItemState();
+}
+
+class _LessonsItemState extends State<_LessonsItem> {
+  @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title: Text(task.title),
-        onTap: () => _push(index, context),
-        trailing: const Icon(
-          Icons.keyboard_arrow_right,
-          color: Colors.black,
-        ),
+        title: Text(widget.task.title),
+        onTap: () => _result(widget.index).correct > 6
+            ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                content: Text('${widget.task.title}. Ustinlik bilen gecilen!')))
+            : _push(widget.index, context),
+        trailing: _result(widget.index).correct > 6
+            ? Row(
+                mainAxisSize: MainAxisSize.min,
+                children: [
+                  Text(
+                    '${_result(widget.index).correct}',
+                    style: const TextStyle(color: Colors.green),
+                  ),
+                  const SizedBox(width: 10),
+                  Text(
+                    '${_result(widget.index).fail}',
+                    style: const TextStyle(color: Colors.red),
+                  )
+                ],
+              )
+            : const Icon(
+                Icons.keyboard_arrow_right,
+                color: Colors.black,
+              ),
       ),
     );
   }
 
-  void _push(int index, BuildContext context) {
-    Widget widget;
+  ({int correct, int fail}) _result(int i) {
+    if (widget.pref.checkKey('${AppConstants.kTestQuestion}$i')) {
+      final savedData =
+          widget.pref.getString('${AppConstants.kTestQuestion}$i');
+      final parsed = jsonDecode(savedData) as Map<String, dynamic>;
+      final len = parsed.values.where((e) => e == true).length;
+      return (correct: len, fail: 10 - len);
+    } else {
+      return (correct: 0, fail: 0);
+    }
+  }
+
+  void _push(int index, BuildContext context) async {
+    Widget w;
     if (index >= 0 && index <= 30) {
-      widget = EquationTestsScreen(
-        tests: task.tests,
-        pref: pref,
+      w = EquationTestsScreen(
+        tests: widget.task.tests,
+        pref: widget.pref,
         index: index,
-        repository: repository,
+        repository: widget.repository,
       );
     } else {
-      widget = Scaffold(
+      w = Scaffold(
         appBar: AppBar(),
-        body: Center(child: Text(task.title)),
+        body: Center(child: Text(widget.task.title)),
       );
     }
-    _route(context: context, widget: widget);
+    final routeResult = await _route<bool>(context: context, widget: w);
+    if (routeResult != null && routeResult) {
+      setState(() {});
+    }
   }
 
   Future<T?> _route<T>({
