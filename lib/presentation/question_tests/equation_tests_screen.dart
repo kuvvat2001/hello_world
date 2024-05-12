@@ -36,6 +36,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
   bool isWritingBoardOpen = false;
   GlobalKey<SignatureState> signatureKey = GlobalKey();
   List<bool> answers = [];
+  final results = <String, dynamic>{};
 
   @override
   void dispose() {
@@ -52,6 +53,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
   }
 
   void checkStore() async {
+    results.clear();
     if (widget.pref.checkKey('${AppConstants.kTestQuestion}${widget.index}')) {
       await widget.pref
           .removeKey('${AppConstants.kTestQuestion}${widget.index}');
@@ -59,8 +61,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
   }
 
   void saveTestResult(int questionIndex, bool isCorrect) {
-    final results = <String, dynamic>{};
-    results.addAll({'$questionIndex': isCorrect});
+    results.putIfAbsent('$questionIndex', () => isCorrect);
     widget.pref.setData(
       '${AppConstants.kTestQuestion}${widget.index}',
       jsonEncode(results),
@@ -195,9 +196,8 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       } else {
         _controllerCenter.play();
 
-        Future.delayed(const Duration(seconds: 2),
-                () => _showActionSheet(context, 'Dogry jogap: $score'))
-            .whenComplete(() => widget.repository.getTasks());
+        Future.delayed(const Duration(seconds: 1),
+            () => _showActionSheet(context, 'Dogry jogap: $score'));
       }
     } else {
       answers.add(e.isCorrect);
@@ -214,8 +214,8 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
             CupertinoActionSheetAction(
               isDefaultAction: true,
               onPressed: () {
-                Navigator.pop(context);
-                Navigator.pop(context);
+                Navigator.pop(context, true);
+                Navigator.pop(context, true);
               },
               child: const Text('Yza çyk'),
             ),
