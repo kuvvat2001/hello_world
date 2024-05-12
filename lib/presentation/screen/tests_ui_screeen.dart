@@ -10,11 +10,12 @@ import 'package:math_app/presentation/utils/const.dart';
 
 class TestsUiScreen extends StatefulWidget {
   const TestsUiScreen({
-    super.key,
+    Key? key,
     required this.repository,
     required this.title,
     required this.pref,
-  });
+  }) : super(key: key);
+
   final IRepository repository;
   final String title;
   final LocalStoreRepository pref;
@@ -45,92 +46,47 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
-          backgroundColor: Colors.blue,
-        ),
-        body: data != null
-            ? ListView.builder(
-                itemCount: isAllowedMore ? data!.data.length : 4,
-                // Toplamda 4 tema
-                itemBuilder: (BuildContext context, int index) => _LessonsItem(
-                  index: index,
-                  task: data!.data[index].task,
-                  pref: widget.pref,
-                  repository: widget.repository,
-                ),
-
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
-              )
-            : const Center(child: CircularProgressIndicator.adaptive()));
-  }
-
-  bool get isAllowedMore {
-    final results = <Map<String, dynamic>>[];
-    for (var i = 0; i < data!.data.take(4).length; i++) {
-      if (widget.pref.checkKey('${AppConstants.kTestQuestion}$i')) {
-        final savedData =
-            widget.pref.getString('${AppConstants.kTestQuestion}$i');
-        final parsed = jsonDecode(savedData) as Map<String, dynamic>;
-        results.add(parsed);
-      }
-    }
-    if (results.length < 4) return false;
-    final result =
-        results.every((e) => e.values.where((e) => e == true).length > 6);
-    return result;
-  }
-}
-
-class _LessonsItem extends StatefulWidget {
-  const _LessonsItem({
-    required this.index,
-    required this.task,
-    required this.pref,
-    required this.repository,
-  });
-  final int index;
-  final Task task;
-  final LocalStoreRepository pref;
-  final IRepository repository;
-
-  @override
-  State<_LessonsItem> createState() => _LessonsItemState();
-}
-
-class _LessonsItemState extends State<_LessonsItem> {
-  @override
-  Widget build(BuildContext context) {
-    return Card(
-      child: ListTile(
-        title: Text(widget.task.title),
-        onTap: () => _result(widget.index).correct > 6
-            ? ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                content: Text('${widget.task.title}. Ustinlik bilen gecilen!')))
-            : _push(widget.index, context),
-        trailing: _result(widget.index).correct > 6
-            ? Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    '${_result(widget.index).correct}',
-                    style: const TextStyle(color: Colors.green),
-                  ),
-                  const SizedBox(width: 10),
-                  Text(
-                    '${_result(widget.index).fail}',
-                    style: const TextStyle(color: Colors.red),
-                  )
-                ],
-              )
-            : const Icon(
-                Icons.keyboard_arrow_right,
-                color: Colors.black,
-              ),
+      appBar: AppBar(
+        title: Text(widget.title),
+        backgroundColor: Colors.blue,
       ),
+      body: data != null
+          ? ListView.builder(
+              itemCount: data!.data.length,
+              itemBuilder: (BuildContext context, int index) => _LessonsItem(
+                index: index,
+                task: data!.data[index].task,
+                pref: widget.pref,
+                repository: widget.repository,
+                isUnlocked: _isUnlocked(index),
+              ),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
+            )
+          : const Center(child: CircularProgressIndicator.adaptive()),
     );
   }
+
+bool _isUnlocked(int index) {
+  if (index < 4) {
+    // İlk dört test her zaman açıktır
+    return true;
+  } else {
+    // Diğer testler için kontrol
+    int previousIndex = index - 1;
+    int requiredCorrectAnswers = 6; // Her bir bölüm için gerekli doğru cevap sayısı
+    while (previousIndex >= 3) {
+      final result = _result(previousIndex);
+      if (result.correct < requiredCorrectAnswers) {
+        // Önceki bölümde gerekli sayıda doğru cevap alınmadıysa, kilidini açamaz
+        return false;
+      }
+      previousIndex--;
+    }
+    // Önceki bölümlerde gerekli sayıda doğru cevap alındıysa, bu bölümün kilidi açılır
+    return true;
+  }
+}
 
   ({int correct, int fail}) _result(int i) {
     if (widget.pref.checkKey('${AppConstants.kTestQuestion}$i')) {
@@ -142,6 +98,48 @@ class _LessonsItemState extends State<_LessonsItem> {
     } else {
       return (correct: 0, fail: 0);
     }
+  }
+}
+
+class _LessonsItem extends StatefulWidget {
+  const _LessonsItem({
+    required this.index,
+    required this.task,
+    required this.pref,
+    required this.repository,
+    required this.isUnlocked,
+  });
+
+  final int index;
+  final Task task;
+  final LocalStoreRepository pref;
+  final IRepository repository;
+  final bool isUnlocked;
+
+  @override
+  State<_LessonsItem> createState() => _LessonsItemState();
+}
+
+class _LessonsItemState extends State<_LessonsItem> {
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      child: ListTile(
+        title: Text(widget.task.title),
+        onTap: () {
+          if (!widget.isUnlocked) {
+            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text('${widget.task.title} ýapyk.'),
+            ));
+          } else {
+            _push(widget.index, context);
+          }
+        },
+        trailing: widget.isUnlocked
+            ? const Icon(Icons.lock_open, color: Colors.black)
+            : const Icon(Icons.lock, color: Colors.black),
+      ),
+    );
   }
 
   void _push(int index, BuildContext context) async {
@@ -175,17 +173,4 @@ class _LessonsItemState extends State<_LessonsItem> {
           builder: (context) => widget,
         ),
       );
-
-  List<Color> getColorList(int elementSayisi) {
-    List<Color> colors = [];
-    for (int i = 0; i < elementSayisi; i++) {
-      colors.add(_getThemeColor(i));
-    }
-    return colors;
-  }
-
-  Color _getThemeColor(int index) {
-    List<Color> colors = [Colors.white, Colors.white];
-    return colors[index % colors.length];
-  }
 }

@@ -14,6 +14,7 @@ final class LocalStoreRepository {
         List => _ref.setStringList(key, data as List<String>),
         _ => _ref.reload(),
       };
+      
 
   bool getBool(String key) => _ref.getBool(key) ?? false;
 

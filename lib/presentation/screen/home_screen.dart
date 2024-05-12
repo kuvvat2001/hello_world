@@ -88,8 +88,8 @@ class HomeScreen extends StatelessWidget {
         title: "Netijeler",
         icon: Icons.poll,
         color: Colors.amber,
-        screen: const ResultScreen(
-          tests: [],
+        screen:  ResultScreen(
+         repository: repository, title: 'Netijeler', pref: pref,
         ),
       ),
       MenuItem(

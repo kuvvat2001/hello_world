@@ -143,20 +143,26 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
                         (index) {
                           final e =
                               widget.tests[currentQuestionIndex].choices[index];
-                          return ListTile(
-                            contentPadding: const EdgeInsets.symmetric(
-                                vertical: 10, horizontal: 16),
-                            title: Math.tex(e.text),
-                            onTap: isWritingBoardOpen
-                                ? null
-                                : () {
-                                    if (selectedChoiceIndex == -1) {
-                                      checkAnswer(index);
-                                    }
-                                    _handler(e);
-                                  },
-                            splashColor:
-                                e.isCorrect ? Colors.green : Colors.red,
+                          return Tooltip(
+                            message: 'Dogry jogaby saýlamak uçin basyň!',
+                            child: IgnorePointer(
+                              ignoring: isWritingBoardOpen,
+                              child: ListTile(
+                                contentPadding: const EdgeInsets.symmetric(
+                                    vertical: 10, horizontal: 16),
+                                title: Math.tex(e.text),
+                                onTap: isWritingBoardOpen
+                                    ? null
+                                    : () {
+                                        if (selectedChoiceIndex == -1) {
+                                          checkAnswer(index);
+                                        }
+                                        _handler(e);
+                                      },
+                                splashColor:
+                                    e.isCorrect ? Colors.green : Colors.red,
+                              ),
+                            ),
                           );
                         },
                       )
