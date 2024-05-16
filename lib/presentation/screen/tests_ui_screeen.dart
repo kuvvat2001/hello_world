@@ -42,6 +42,9 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
 
     log('$data');
   }
+   void refresh() {
+    setState(() {});
+  }
 
   @override
   Widget build(BuildContext context) {

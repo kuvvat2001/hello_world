@@ -4,7 +4,8 @@ import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/repository/repository.dart';
 import 'package:math_app/presentation/screen/books_scrren.dart';
 import 'package:math_app/presentation/screen/results_screen.dart';
-import 'package:math_app/presentation/screen/statistic_screen.dart';
+import 'package:math_app/presentation/screen/screen_statistic/line_chart_sample1.dart';
+// import 'package:math_app/presentation/screen/screen_statistic/statistic_screen.dart';
 import 'package:math_app/presentation/screen/tests_ui_screeen.dart';
 import 'package:math_app/presentation/utils/const.dart';
 
@@ -82,7 +83,7 @@ class HomeScreen extends StatelessWidget {
         title: "Satistikalar",
         icon: Icons.bar_chart,
         color: Colors.redAccent,
-        screen: const StatisticScreen(),
+        screen: const LineChartSample1(),
       ),
       MenuItem(
         title: "Netijeler",
