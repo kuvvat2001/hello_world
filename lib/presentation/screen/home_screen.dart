@@ -82,7 +82,7 @@ class HomeScreen extends StatelessWidget {
         title: "Satistikalar",
         icon: Icons.bar_chart,
         color: Colors.redAccent,
-        screen: const StatisticScreen(),
+        screen: StatisticScreen(repository: repository, pref: pref),
       ),
       MenuItem(
         title: "Netijeler",
