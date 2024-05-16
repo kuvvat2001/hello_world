@@ -46,10 +46,13 @@ class _StatisticScreenState extends State<StatisticScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+       title: const Text("Statistikalar",style: TextStyle(color: Colors.black),),
+       backgroundColor: Colors.blue,
+      ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator.adaptive())
-          : AnalyticsBarChart (items: _listValue),
+          : AnalyticsBarChart(items: _listValue),
     );
   }
 }

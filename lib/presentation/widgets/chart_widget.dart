@@ -12,7 +12,7 @@ class AnalyticsBarChart extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(24).copyWith(bottom: 12),
             child: const Text(
-              "Test Statistics",
+              "Netijeler",
               style: TextStyle(fontSize: 26),
             ),
           ),
