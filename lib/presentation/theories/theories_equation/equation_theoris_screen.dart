@@ -3,11 +3,13 @@ import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class EquationLessonsScreen extends StatefulWidget {
   final String? books;
+  final String title;
 
-
-  const EquationLessonsScreen(
-      {Key? key, this.books,})
-      : super(key: key);
+  const EquationLessonsScreen({
+    Key? key,
+    required this.title,
+    this.books,
+  }) : super(key: key);
 
   @override
   // ignore: library_private_types_in_public_api
@@ -15,22 +17,19 @@ class EquationLessonsScreen extends StatefulWidget {
 }
 
 class _EquationLessonsScreenState extends State<EquationLessonsScreen> {
-  bool isLoading =
-      true; 
+  bool isLoading = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  const Text(""),
-        backgroundColor: Colors.blue,
+        title: Text(widget.title),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator())
           : SfPdfViewer.asset(
               widget.books ?? '',
               canShowScrollHead: false,
-         
 
               // Eğer null ise boş string atanıyor.
             ),

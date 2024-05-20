@@ -46,7 +46,6 @@ class _ResultScreenState extends State<ResultScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
-          backgroundColor: Colors.blue,
         ),
         body: data != null
             ? ListView.builder(

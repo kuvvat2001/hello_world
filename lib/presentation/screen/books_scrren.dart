@@ -24,7 +24,6 @@ class BooksScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Kitaplar'),
-        backgroundColor: Colors.blue,
       ),
       body: ListView.builder(
         itemCount: books.length,

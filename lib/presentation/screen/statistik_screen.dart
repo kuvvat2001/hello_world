@@ -1,10 +1,10 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/repository/repository.dart';
 import 'package:math_app/presentation/utils/const.dart';
-import 'package:math_app/presentation/widgets/chart_widget.dart';
+import 'package:math_app/presentation/widgets/analytics_bar_chart.dart';
+import 'package:math_app/presentation/widgets/line_chart_widget.dart';
 
 class StatisticScreen extends StatefulWidget {
   const StatisticScreen({
@@ -20,8 +20,10 @@ class StatisticScreen extends StatefulWidget {
 }
 
 class _StatisticScreenState extends State<StatisticScreen> {
-  final List<int> _listValue = [];
+  final List<int> correctAnswers = [];
+  final List<int> wrongAnswers = [];
   bool isLoading = false;
+
   @override
   void initState() {
     init();
@@ -29,30 +31,64 @@ class _StatisticScreenState extends State<StatisticScreen> {
   }
 
   void init() async {
-    isLoading = true;
+    setState(() {
+      isLoading = true;
+    });
+
     final data = await widget.repository.getTasks();
     for (var i = 0; i < data.data.length; i++) {
       if (widget.pref.checkKey('${AppConstants.kTestQuestion}$i')) {
         final savedData =
             widget.pref.getString('${AppConstants.kTestQuestion}$i');
         final parsed = jsonDecode(savedData) as Map<String, dynamic>;
-        _listValue.add(parsed.values.where((e) => e == true).length);
+        final correctCount = parsed.values.where((e) => e == true).length;
+        final wrongCount = parsed.values.where((e) => e == false).length;
+        correctAnswers.add(correctCount);
+        wrongAnswers.add(wrongCount);
+      } else {
+        correctAnswers.add(0); // Test sonucu yoksa 0 ekleyin
+        wrongAnswers.add(0); // Test sonucu yoksa 0 ekleyin
       }
-      setState(() {});
-      isLoading = false;
     }
+    
+    setState(() {
+      isLoading = false;
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-       title: const Text("Statistikalar",style: TextStyle(color: Colors.black),),
-       backgroundColor: Colors.blue,
+       title: const Text("Statistikalar"),
       ),
       body: isLoading
           ? const Center(child: CircularProgressIndicator.adaptive())
-          : AnalyticsBarChart(items: _listValue),
+          : SingleChildScrollView(
+              child: Column(
+                children: [
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      "Analytics Bar Chart",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  AnalyticsBarChart(items: correctAnswers),
+                  const Padding(
+                    padding: EdgeInsets.all(16.0),
+                    child: Text(
+                      "Line Chart",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 300, // Yeterli yükseklik ayarlayalım
+                    child: LineChartWidget(correctAnswers: correctAnswers, wrongAnswers: wrongAnswers),
+                  ),
+                ],
+              ),
+            ),
     );
   }
 }

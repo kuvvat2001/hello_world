@@ -15,6 +15,7 @@ class EquationTestsScreen extends StatefulWidget {
   const EquationTestsScreen({
     Key? key,
     required this.tests,
+    required this.title,
     required this.pref,
     required this.index,
     required this.repository,
@@ -23,14 +24,15 @@ class EquationTestsScreen extends StatefulWidget {
   final LocalStoreRepository pref;
   final int index;
   final IRepository repository;
+  final String title;
 
   @override
+  // ignore: library_private_types_in_public_api
   _EquationTestsScreenState createState() => _EquationTestsScreenState();
 }
 
 class _EquationTestsScreenState extends State<EquationTestsScreen> {
   late ConfettiController _controllerCenter;
-
   int currentQuestionIndex = 0;
   int selectedChoiceIndex = -1;
   bool isWritingBoardOpen = false;
@@ -40,7 +42,6 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
 
   @override
   void dispose() {
-    
     _controllerCenter.dispose();
     super.dispose();
   }
@@ -51,6 +52,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
         ConfettiController(duration: const Duration(seconds: 10));
     checkStore();
     super.initState();
+    _shuffleQuestions(); // Soruları karıştırma işlemi burada çağrılır
   }
 
   void checkStore() async {
@@ -59,6 +61,11 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       await widget.pref
           .removeKey('${AppConstants.kTestQuestion}${widget.index}');
     }
+  }
+
+  void _shuffleQuestions() {
+    // Soruları rastgele karıştır
+    widget.tests.shuffle();
   }
 
   void saveTestResult(int questionIndex, bool isCorrect) {
@@ -93,8 +100,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
     bool isLoading = widget.tests.isEmpty;
     return Scaffold(
       appBar: AppBar(
-        title: const Text(""),
-        backgroundColor: Colors.blue,
+        title:  Text(widget.title),
       ),
       body: Padding(
         padding: const EdgeInsets.only(left: 15, right: 15, bottom: 25),
@@ -172,7 +178,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
               ),
             if (isWritingBoardOpen)
               Signature(
-                color: Colors.black,
+                color: Theme.of(context).colorScheme.onPrimary,
                 strokeWidth: 3.0,
                 backgroundPainter: null,
                 key: signatureKey,
@@ -199,7 +205,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
         Future.delayed(
             const Duration(seconds: 2),
             () => _showActionSheett(context,
-                'Siz 10 soragdan $score-sini bildiniz, täzeden synanyşmagyňyzy maslahat berýäris'));
+                'Siz 10 soragdan $score dogry bildiniz, tazeden synanyşmagyňyzy maslahat berýäris.'));
       } else {
         _controllerCenter.play();
 
@@ -215,7 +221,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       showCupertinoModalPopup<void>(
         context: context,
         builder: (BuildContext context) => CupertinoActionSheet(
-          title: const Text('Synagy geçdiňiz'),
+          title: const Text('Testi geçtiniz'),
           message: Text(msg),
           actions: <CupertinoActionSheetAction>[
             CupertinoActionSheetAction(
@@ -234,22 +240,22 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       showCupertinoModalPopup<void>(
         context: context,
         builder: (BuildContext context) => CupertinoActionSheet(
-          title: const Text('Synagy geçmediňiz'),
+          title: const Text('Testi geçemediniz'),
           message: Text(msg),
           actions: <CupertinoActionSheetAction>[
             CupertinoActionSheetAction(
               isDefaultAction: true,
               onPressed: () {
-                Navigator.pop(context);
-                Navigator.pop(context);
+                Navigator.pop(context, true);
+                Navigator.pop(context, true);
               },
-              child: const Text('Täzden synanyşyň'),
+              child: const Text('Tazeden synanşyň'),
             ),
           ],
         ),
       );
 
-  String split(bool istext) {
+/*   String split(bool istext) {
     final splited = widget.tests[currentQuestionIndex].question.split(",");
     if (istext) {
       final text = splited[0];
@@ -258,5 +264,5 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
       final formula = splited[1];
       return formula;
     }
-  }
+  } */
 }

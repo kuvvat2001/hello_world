@@ -14,7 +14,6 @@ class LessonsUiScreen extends StatefulWidget {
   final IRepository repository;
   final String title;
 
-
   @override
   State<LessonsUiScreen> createState() => _LessonsUiScreenState();
 }
@@ -43,16 +42,14 @@ class _LessonsUiScreenState extends State<LessonsUiScreen> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Sapaklar"),
-          backgroundColor: Colors.blue,
+          //backgroundColor: Colors.blue,
         ),
         body: data != null
             ? ListView.builder(
-              shrinkWrap: true,
+                shrinkWrap: true,
                 itemCount: data!.data.length,
-                
                 itemBuilder: (BuildContext context, int index) =>
-                    _LessonsItem(index, data!.data[index].task),
-
+                    _LessonsItem(index, data!.data[index].task,),
                 padding:
                     const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
               )
@@ -64,33 +61,36 @@ class _LessonsItem extends StatelessWidget {
   const _LessonsItem(this.index, this.task);
   final int index;
   final Task task;
+  
 
   @override
   Widget build(BuildContext context) {
     return Card(
       child: ListTile(
-        title:  Text(task.title),
+        title: Text(task.title),
         onTap: () => _push(index, context),
         trailing: const Icon(
           Icons.keyboard_arrow_right,
-          color: Colors.black,
         ),
       ),
     );
   }
 
-void _push(int index, BuildContext context) {
-  Widget widget;
-  if (index >= 0 && index <= 30) {
-    widget = EquationLessonsScreen(books:task.books,);
-  } else {
-    widget = Scaffold(
-      appBar: AppBar(),
-      body: Center(child: Text(task.title)),
-    );
+  void _push(int index, BuildContext context) {
+    Widget widget;
+    if (index >= 0 && index <= 30) {
+      widget = EquationLessonsScreen(
+        books: task.books,
+        title: task.title,
+      );
+    } else {
+      widget = Scaffold(
+        appBar: AppBar(),
+        body: Center(child: Text(task.title)),
+      );
+    }
+    _route(context: context, widget: widget);
   }
-  _route(context: context, widget: widget);
-}
 
   Future<T?> _route<T>(
           {required BuildContext context, required Widget widget}) =>
@@ -100,5 +100,4 @@ void _push(int index, BuildContext context) {
           builder: (context) => widget,
         ),
       );
-
 }

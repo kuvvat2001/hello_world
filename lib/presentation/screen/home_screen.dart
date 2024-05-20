@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/repository/repository.dart';
@@ -7,6 +8,8 @@ import 'package:math_app/presentation/screen/results_screen.dart';
 import 'package:math_app/presentation/screen/statistik_screen.dart';
 import 'package:math_app/presentation/screen/tests_ui_screeen.dart';
 import 'package:math_app/presentation/utils/const.dart';
+import 'package:math_app/presentation/widgets/theme_switch.dart';
+import 'package:math_app/provider/active_theme_provider.dart';
 
 import '../theories/theories_equation/equatin_topic.dart';
 
@@ -27,7 +30,7 @@ class MenuItem {
 }
 
 // home_screen.dart
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatelessWidget implements PreferredSizeWidget {
   const HomeScreen({
     super.key,
     required this.repository,
@@ -40,8 +43,23 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Matematika"),
-        backgroundColor: Colors.blue,
+        title: Text(
+          "Matematika",
+          style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
+        ),
+        actions: [
+          Row(
+            children: [
+              Consumer(
+                  builder: (context, ref, child) => Icon(
+                      ref.watch(activeThemeProvider) == Themes.dark
+                          ? Icons.dark_mode
+                          : Icons.light_mode)),
+              const SizedBox(width: 8),
+              const ThemeSwitch(),
+            ],
+          )
+        ],
       ),
       body: StaggeredGridView.count(
         crossAxisCount: 2,
@@ -82,21 +100,26 @@ class HomeScreen extends StatelessWidget {
         title: "Satistikalar",
         icon: Icons.bar_chart,
         color: Colors.redAccent,
-        screen:  StatisticScreen(repository: repository, pref: pref,),
+        screen: StatisticScreen(
+          repository: repository,
+          pref: pref,
+        ),
       ),
       MenuItem(
         title: "Netijeler",
         icon: Icons.poll,
         color: Colors.amber,
-        screen:  ResultScreen(
-         repository: repository, title: 'Netijeler', pref: pref,
+        screen: ResultScreen(
+          repository: repository,
+          title: 'Netijeler',
+          pref: pref,
         ),
       ),
       MenuItem(
         title: "Kitaplar",
         icon: Icons.menu_book_rounded,
         color: Colors.deepPurple,
-        screen:  BooksScreen(),
+        screen: BooksScreen(),
       ),
     ];
 
@@ -105,7 +128,7 @@ class HomeScreen extends StatelessWidget {
         .toList();
   }
 
-   Widget _buildMenuItem(BuildContext context, MenuItem menuItem) {
+  Widget _buildMenuItem(BuildContext context, MenuItem menuItem) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -142,4 +165,6 @@ class HomeScreen extends StatelessWidget {
       ),
     );
   }
+
+  Size get preferredSize => const Size.fromHeight(60);
 }

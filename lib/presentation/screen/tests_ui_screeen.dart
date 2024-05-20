@@ -42,8 +42,9 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
 
     log('$data');
   }
-   void refresh() {
-    setState(() {});
+
+  void refresh() {
+    _init(); // Verileri yeniden yükle
   }
 
   @override
@@ -51,7 +52,6 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
-        backgroundColor: Colors.blue,
       ),
       body: data != null
           ? ListView.builder(
@@ -62,39 +62,38 @@ class _TestsUiScreenState extends State<TestsUiScreen> {
                 pref: widget.pref,
                 repository: widget.repository,
                 isUnlocked: _isUnlocked(index),
+                refreshParent: refresh, // Ebeveyn yenileme fonksiyonunu geçiriyoruz
               ),
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
+              padding: const EdgeInsets.symmetric(horizontal: 5.0, vertical: 1.0),
             )
           : const Center(child: CircularProgressIndicator.adaptive()),
     );
   }
 
-bool _isUnlocked(int index) {
-  if (index < 4) {
-    // İlk dört test her zaman açıktır
-    return true;
-  } else {
-    // Diğer testler için kontrol
-    int previousIndex = index - 1;
-    int requiredCorrectAnswers = 6; // Her bir bölüm için gerekli doğru cevap sayısı
-    while (previousIndex >= 3) {
-      final result = _result(previousIndex);
-      if (result.correct < requiredCorrectAnswers) {
-        // Önceki bölümde gerekli sayıda doğru cevap alınmadıysa, kilidini açamaz
-        return false;
+  bool _isUnlocked(int index) {
+    if (index < 4) {
+      // İlk dört test her zaman açıktır
+      return true;
+    } else {
+      // Diğer testler için kontrol
+      int previousIndex = index - 1;
+      int requiredCorrectAnswers = 6; // Her bir bölüm için gerekli doğru cevap sayısı
+      while (previousIndex >= 3) {
+        final result = _result(previousIndex);
+        if (result.correct < requiredCorrectAnswers) {
+          // Önceki bölümde gerekli sayıda doğru cevap alınmadıysa, kilidini açamaz
+          return false;
+        }
+        previousIndex--;
       }
-      previousIndex--;
+      // Önceki bölümlerde gerekli sayıda doğru cevap alındıysa, bu bölümün kilidi açılır
+      return true;
     }
-    // Önceki bölümlerde gerekli sayıda doğru cevap alındıysa, bu bölümün kilidi açılır
-    return true;
   }
-}
 
   ({int correct, int fail}) _result(int i) {
     if (widget.pref.checkKey('${AppConstants.kTestQuestion}$i')) {
-      final savedData =
-          widget.pref.getString('${AppConstants.kTestQuestion}$i');
+      final savedData = widget.pref.getString('${AppConstants.kTestQuestion}$i');
       final parsed = jsonDecode(savedData) as Map<String, dynamic>;
       final len = parsed.values.where((e) => e == true).length;
       return (correct: len, fail: 10 - len);
@@ -111,6 +110,7 @@ class _LessonsItem extends StatefulWidget {
     required this.pref,
     required this.repository,
     required this.isUnlocked,
+    required this.refreshParent, // Ebeveyn yenileme fonksiyonunu ekliyoruz
   });
 
   final int index;
@@ -118,6 +118,7 @@ class _LessonsItem extends StatefulWidget {
   final LocalStoreRepository pref;
   final IRepository repository;
   final bool isUnlocked;
+  final VoidCallback refreshParent; // Geri çağırma fonksiyonunu tanımlıyoruz
 
   @override
   State<_LessonsItem> createState() => _LessonsItemState();
@@ -132,15 +133,15 @@ class _LessonsItemState extends State<_LessonsItem> {
         onTap: () {
           if (!widget.isUnlocked) {
             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-              content: Text('${widget.task.title} ýapyk.'),
+              content: Text('${widget.task.title} bölüm ýapyk.'),
             ));
           } else {
             _push(widget.index, context);
           }
         },
         trailing: widget.isUnlocked
-            ? const Icon(Icons.lock_open, color: Colors.black)
-            : const Icon(Icons.lock, color: Colors.black),
+            ? const Icon(Icons.lock_open)
+            : const Icon(Icons.lock),
       ),
     );
   }
@@ -153,6 +154,7 @@ class _LessonsItemState extends State<_LessonsItem> {
         pref: widget.pref,
         index: index,
         repository: widget.repository,
+        title: widget.task.title,
       );
     } else {
       w = Scaffold(
@@ -162,7 +164,8 @@ class _LessonsItemState extends State<_LessonsItem> {
     }
     final routeResult = await _route<bool>(context: context, widget: w);
     if (routeResult != null && routeResult) {
-      setState(() {});
+      // Geri döndüğünde ebeveyn ekranı yenilemek için refreshParent fonksiyonunu çağır
+      widget.refreshParent();
     }
   }
 

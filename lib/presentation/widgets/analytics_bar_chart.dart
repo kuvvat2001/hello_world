@@ -35,9 +35,22 @@ class AnalyticsBarChart extends StatelessWidget {
                               bottomTitles: AxisTitles(
                                 sideTitles: SideTitles(
                                   showTitles: true,
-                                  //reservedSize: 28,
-                                // interval: _interval,
-                                  getTitlesWidget: bottomTitleWidgets,
+                                  getTitlesWidget: (double value, TitleMeta meta) {
+                                    final index = value.toInt();
+                                    if (index >= 0 && index < items.length) {
+                                      return SideTitleWidget(
+                                        axisSide: meta.axisSide,
+                                        space: 4, // Aradaki boşluk
+                                        child: Transform.rotate(
+                                          angle: -45 * 3.1415927 / 180,
+                                          child: Text('Test ${index + 1}', style: const TextStyle(fontSize: 10)),
+                                        ),
+                                      );
+                                    } else {
+                                      return const SizedBox.shrink();
+                                    }
+                                  },
+                                  reservedSize: 50, // Yeterli boşluk sağlanır
                                 ),
                               ),
                               rightTitles: AxisTitles(
@@ -57,8 +70,7 @@ class AnalyticsBarChart extends StatelessWidget {
                             ),
                             gridData: FlGridData(
                               show: true,
-                              verticalInterval: 0.1,
-                              //checkToShowHorizontalLine: (value) => value % 10 == 0,
+                              verticalInterval: items.length > 0 ? (items.length / items.length) : 1, // Dikey aralığı dinamik olarak ayarla
                               getDrawingHorizontalLine: (value) => const FlLine(
                                 color: Colors.grey,
                                 strokeWidth: 1,
@@ -95,26 +107,6 @@ class AnalyticsBarChart extends StatelessWidget {
           ),
         ],
       );
-
-  Widget bottomTitleWidgets(double value, TitleMeta meta) {
-    // uytgedip bilersin
-    final s = switch (value.toInt()) {
-      0 => 'Test 1',
-      1 => 'Test 2',
-      2 => 'Test 3',
-      3 => 'Test 4',
-      4 => 'Test 5',
-      5 => 'Test 6',
-      6 => 'Test 7',
-      7 => 'Test 8',
-      8 => 'Test 9',
-      9 => 'Test 10',
-      10 => 'Test 11',
-      11 => 'Test 12',
-      _ => '',
-    };
-    return Text(s, style: const TextStyle(fontSize: 10));
-  }
 
   Widget rightTitles(double value, TitleMeta meta, BuildContext context) {
     Widget axisTitles = Text(
