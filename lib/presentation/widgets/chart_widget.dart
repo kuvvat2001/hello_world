@@ -36,7 +36,7 @@ class AnalyticsBarChart extends StatelessWidget {
                                 sideTitles: SideTitles(
                                   showTitles: true,
                                   //reservedSize: 28,
-                                  // interval: _interval,
+                                // interval: _interval,
                                   getTitlesWidget: bottomTitleWidgets,
                                 ),
                               ),

@@ -1145,7 +1145,7 @@
     {
       "task": {
         "title": "Iki näbelili deňlemeleri grafik usuly bilen çözmek",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/lesson_6.pdf",
         "tests": [
           {
             "question": "Aşakdakylaryň haýsysy berlen deňlemäniň çözüwi",
@@ -1609,7 +1609,7 @@
     {
       "task": {
         "title": "Arifmetik progressiýa",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/lesson_7arfimetik.pdf",
         "tests": [
           {
             "question": "Aşakdaky berlen yzygiderligiň 5-nji agzasyny tapyň",
@@ -1837,7 +1837,7 @@
     {
       "task": {
         "title": "Geometrik progressiýa",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/lesson_8.pdf",
         "tests": [
           {
             "question": "Geometrik progresiýanyň birinji agzasy we maýdalawjysy degişlilikde 1 we -2 bolsa , altynjy agzasyny tapyň",
@@ -2065,7 +2065,7 @@
     {
       "task": {
         "title": "Trigonometrik funksiýalar",
-        "books": "assets/for_tests/ALGEBRA.pdf",
+        "books": "assets/for_tests/lesson/lesson_9.pdf",
         "tests": [
           {
             "question": "Aşakaky görezilen gradusyň radian ölçeg birligini hasaplaň",

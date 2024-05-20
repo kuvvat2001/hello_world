@@ -40,6 +40,7 @@ class _EquationTestsScreenState extends State<EquationTestsScreen> {
 
   @override
   void dispose() {
+    
     _controllerCenter.dispose();
     super.dispose();
   }

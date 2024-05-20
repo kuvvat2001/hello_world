@@ -22,7 +22,7 @@ class _EquationLessonsScreenState extends State<EquationLessonsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text(""),
+        title:  const Text(""),
         backgroundColor: Colors.blue,
       ),
       body: isLoading

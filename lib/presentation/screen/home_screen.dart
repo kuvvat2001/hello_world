@@ -4,7 +4,7 @@ import 'package:math_app/data/repository_impl/local__store_repository.dart';
 import 'package:math_app/domain/repository/repository.dart';
 import 'package:math_app/presentation/screen/books_scrren.dart';
 import 'package:math_app/presentation/screen/results_screen.dart';
-import 'package:math_app/presentation/screen/screen_statistic/statistic_screen.dart';
+import 'package:math_app/presentation/screen/statistik_screen.dart';
 import 'package:math_app/presentation/screen/tests_ui_screeen.dart';
 import 'package:math_app/presentation/utils/const.dart';
 
@@ -96,7 +96,7 @@ class HomeScreen extends StatelessWidget {
         title: "Kitaplar",
         icon: Icons.menu_book_rounded,
         color: Colors.deepPurple,
-        screen: const BooksScreen(),
+        screen:  BooksScreen(),
       ),
     ];
 
@@ -105,7 +105,7 @@ class HomeScreen extends StatelessWidget {
         .toList();
   }
 
-  Widget _buildMenuItem(BuildContext context, MenuItem menuItem) {
+   Widget _buildMenuItem(BuildContext context, MenuItem menuItem) {
     return GestureDetector(
       onTap: () {
         Navigator.push(
@@ -115,15 +115,27 @@ class HomeScreen extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(18),
-          color: Colors.grey,
+          color: menuItem.color.withOpacity(0.2),
+          boxShadow: [
+            BoxShadow(
+              color: menuItem.color.withOpacity(0.50),
+              blurRadius: 8,
+            ),
+          ],
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Icon(menuItem.icon, size: 60, color: menuItem.color),
+            const SizedBox(height: 10),
             Text(
               menuItem.title,
-              style: const TextStyle(color: Colors.white, fontSize: 18),
+              textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black87,
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+              ),
             ),
           ],
         ),
